@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SKDS" targetNamespace="http://tempuri.org/MEMODS.xsd" xmlns:mstns="http://tempuri.org/MEMODS.xsd" xmlns="http://tempuri.org/MEMODS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="SKDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="SKDS" msprop:Generator_UserDSName="SKDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="MEMO" msprop:Generator_TableClassName="MEMODataTable" msprop:Generator_TableVarName="tableMEMO" msprop:Generator_RowChangedName="MEMORowChanged" msprop:Generator_TablePropName="MEMO" msprop:Generator_RowDeletingName="MEMORowDeleting" msprop:Generator_RowChangingName="MEMORowChanging" msprop:Generator_RowEvHandlerName="MEMORowChangeEventHandler" msprop:Generator_RowDeletedName="MEMORowDeleted" msprop:Generator_RowClassName="MEMORow" msprop:Generator_UserTableName="MEMO" msprop:Generator_RowEvArgName="MEMORowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="E_MEMO" msprop:Generator_ColumnVarNameInTable="columnE_MEMO" msprop:Generator_ColumnPropNameInRow="E_MEMO" msprop:Generator_ColumnPropNameInTable="E_MEMOColumn" msprop:Generator_UserColumnName="E_MEMO" type="xs:string" minOccurs="0" />
+              <xs:element name="E_ORDER" msprop:Generator_ColumnVarNameInTable="columnE_ORDER" msprop:Generator_ColumnPropNameInRow="E_ORDER" msprop:Generator_ColumnPropNameInTable="E_ORDERColumn" msprop:Generator_UserColumnName="E_ORDER" type="xs:string" minOccurs="0" />
+              <xs:element name="E_SEQ" msprop:Generator_ColumnVarNameInTable="columnE_SEQ" msprop:Generator_ColumnPropNameInRow="E_SEQ" msprop:Generator_ColumnPropNameInTable="E_SEQColumn" msprop:Generator_UserColumnName="E_SEQ" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

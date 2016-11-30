@@ -1,0 +1,689 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A0D22EA5-85C1-4E77-AFF1-4F22D135052A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>SwanProject.My.MyApplication</StartupObject>
+    <RootNamespace>SwanProject</RootNamespace>
+    <AssemblyName>SwanProject</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>\\server\siamvb\install\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>SWANPROJECT</ProductName>
+    <PublisherName>SWANSIAM</PublisherName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <TrustUrlParameters>true</TrustUrlParameters>
+    <ApplicationRevision>222</ApplicationRevision>
+    <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsUrl>\\server\siamvb\install</BootstrapperComponentsUrl>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SwanProject.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SwanProject.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>3B78AC9331F952F30ED641A0391C4867C3134B64</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SwanProject_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>SwanProject.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>SwanProject.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ABCocr, Version=3.0.1.4, Culture=neutral, PublicKeyToken=ab03c80bdb421951, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\WebSupergoo\ABCocr .NET 3.0\Common\ABCocr.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EPPlus, Version=4.0.5.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.0.5\lib\net20\EPPlus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Tesseract, Version=3.0.2.0, Culture=neutral, PublicKeyToken=ebeb3d86bef60cbe, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tesseract.3.0.2.0\lib\net40\Tesseract.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\CloseLOTfrm.Designer.vb">
+      <DependentUpon>CloseLOTfrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Account\CloseLOTfrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account\PrintSummaryCLSvb.vb" />
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="autoFrm.designer.vb">
+      <DependentUpon>autoFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="autoFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BOMlist.Designer.vb">
+      <DependentUpon>BOMlist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BOMlist.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cls\ExceltoDB.vb" />
+    <Compile Include="cls\ExporttoExcel_EP.vb" />
+    <Compile Include="cls\LOGCLS.vb" />
+    <Compile Include="cls\LoginCls.vb" />
+    <Compile Include="cls\Project.vb" />
+    <Compile Include="DumpToSQLcls.vb" />
+    <Compile Include="HR\Patrol\PatrolExceltoDB.vb" />
+    <Compile Include="HR\Patrol\Patrolfrm.Designer.vb">
+      <DependentUpon>Patrolfrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HR\Patrol\Patrolfrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HR\Timattfrm.Designer.vb">
+      <DependentUpon>Timattfrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HR\Timattfrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginFrm.Designer.vb">
+      <DependentUpon>LoginFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoginFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\SKapp\SKDS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SKDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\SKapp\SKDS.vb">
+      <DependentUpon>SKDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\SKapp\rptSK1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptSK.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Marketing\SKapp\SKappDetailfrm.Designer.vb">
+      <DependentUpon>SKappDetailfrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\SKapp\SKappDetailfrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marketing\SKapp\SKlistFRM.Designer.vb">
+      <DependentUpon>SKlistFRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Marketing\SKapp\SKlistFRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRDTfrm.Designer.vb">
+      <DependentUpon>PRDTfrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PRDTfrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRDTListfrm.designer.vb">
+      <DependentUpon>PRDTListfrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PRDTListfrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOTListfrm.designer.vb">
+      <DependentUpon>LOTListfrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LOTListfrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOTInputfrm.Designer.vb">
+      <DependentUpon>LOTInputfrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LOTInputfrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintQA\PrintQA_310.vb">
+      <DependentUpon>PrintQA_310.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="PrintQA\PrintQA_S_310.vb">
+      <DependentUpon>PrintQA_S_310.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="PrintQA\PrintQA_S.vb">
+      <DependentUpon>PrintQA_S.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="PrintQA\PrintQA.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintQA.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PrintQA\PrintQAfrm.Designer.vb">
+      <DependentUpon>PrintQAfrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PrintQA\PrintQAfrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\LockLOTfrm.Designer.vb">
+      <DependentUpon>LockLOTfrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Production\LockLOTfrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\MAslipDS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MAslipDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Production\MASlipfrm.Designer.vb">
+      <DependentUpon>MASlipfrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Production\MASlipfrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Production\MAslipRPT_310.vb">
+      <DependentUpon>MAslipRPT_310.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Production\MAslipRPT.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MAslipRPT.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Purchase\POfrm.Designer.vb">
+      <DependentUpon>POfrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase\POfrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportFrm.Designer.vb">
+      <DependentUpon>ReportFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockFrm.Designer.vb">
+      <DependentUpon>StockFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StockFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STORE\editstockfrm.Designer.vb">
+      <DependentUpon>editstockfrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="STORE\editstockfrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STORE\MBListfrm.designer.vb">
+      <DependentUpon>MBListfrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="STORE\MBListfrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STORE\MBfrm.Designer.vb">
+      <DependentUpon>MBfrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="STORE\MBfrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STORE\MAListfrm.designer.vb">
+      <DependentUpon>MAListfrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="STORE\MAListfrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cls\autocompleteCLS.vb" />
+    <Compile Include="cls\dataACCcls.vb" />
+    <Compile Include="cls\datacls.vb" />
+    <Compile Include="cls\dataSQLcls.vb" />
+    <Compile Include="cls\DateCls.vb" />
+    <Compile Include="cls\ExporttoExcel.vb" />
+    <Compile Include="cls\matchControl_New.vb" />
+    <Compile Include="cls\NullCLS.vb" />
+    <Compile Include="cls\PrdtCls.vb" />
+    <Compile Include="cls\StockCardCls.vb" />
+    <Compile Include="cls\StockCLS.vb" />
+    <Compile Include="Errorloger.vb" />
+    <Compile Include="STORE\MAfrm.Designer.vb">
+      <DependentUpon>MAfrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="STORE\MAfrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIParent1.Designer.vb">
+      <DependentUpon>MDIParent1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MDIParent1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module1.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ProgressFrm.Designer.vb">
+      <DependentUpon>ProgressFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ProgressFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STORE\QAfrm.Designer.vb">
+      <DependentUpon>QAfrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="STORE\QAfrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STORE\QAListfrm.designer.vb">
+      <DependentUpon>QAListfrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="STORE\QAListfrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockCard.Designer.vb">
+      <DependentUpon>StockCard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StockCard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STORE\QAPrintLabelfrm.Designer.vb">
+      <DependentUpon>QAPrintLabelfrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="STORE\QAPrintLabelfrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="STORE\SlipNOfrm.Designer.vb">
+      <DependentUpon>SlipNOfrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="STORE\SlipNOfrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupplyUsefrm.Designer.vb">
+      <DependentUpon>SupplyUsefrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SupplyUsefrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testReadText.Designer.vb">
+      <DependentUpon>testReadText.vb</DependentUpon>
+    </Compile>
+    <Compile Include="testReadText.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WIP\WIPNOTE_EXCEL.Designer.vb">
+      <DependentUpon>WIPNOTE_EXCEL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WIP\WIPNOTE_EXCEL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WIP\WIPCls.vb" />
+    <Compile Include="WIP\WIPfrm.Designer.vb">
+      <DependentUpon>WIPfrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WIP\WIPfrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Account\CloseLOTfrm.resx">
+      <DependentUpon>CloseLOTfrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="autoFrm.resx">
+      <DependentUpon>autoFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BOMlist.resx">
+      <DependentUpon>BOMlist.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HR\Patrol\Patrolfrm.resx">
+      <DependentUpon>Patrolfrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HR\Timattfrm.resx">
+      <DependentUpon>Timattfrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginFrm.resx">
+      <DependentUpon>LoginFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\SKapp\rptSK.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSK1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\SKapp\SKappDetailfrm.resx">
+      <DependentUpon>SKappDetailfrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marketing\SKapp\SKlistFRM.resx">
+      <DependentUpon>SKlistFRM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRDTfrm.resx">
+      <DependentUpon>PRDTfrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRDTListfrm.resx">
+      <DependentUpon>PRDTListfrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOTListfrm.resx">
+      <DependentUpon>LOTListfrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOTInputfrm.resx">
+      <DependentUpon>LOTInputfrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintQA\PrintQA_310.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PrintQA_310.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintQA\PrintQA_S_310.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PrintQA_S_310.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintQA\PrintQA_S.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PrintQA_S.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintQA\PrintQA.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PrintQA.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintQA\PrintQAfrm.resx">
+      <DependentUpon>PrintQAfrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\LockLOTfrm.resx">
+      <DependentUpon>LockLOTfrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\MASlipfrm.resx">
+      <DependentUpon>MASlipfrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\MAslipRPT_310.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MAslipRPT_310.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Production\MAslipRPT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MAslipRPT.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\POfrm.resx">
+      <DependentUpon>POfrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportFrm.resx">
+      <DependentUpon>ReportFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockFrm.resx">
+      <DependentUpon>StockFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STORE\editstockfrm.resx">
+      <DependentUpon>editstockfrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STORE\MBListfrm.resx">
+      <DependentUpon>MBListfrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STORE\MBfrm.resx">
+      <DependentUpon>MBfrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STORE\MAListfrm.resx">
+      <DependentUpon>MAListfrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STORE\MAfrm.resx">
+      <DependentUpon>MAfrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIParent1.resx">
+      <DependentUpon>MDIParent1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressFrm.resx">
+      <DependentUpon>ProgressFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STORE\QAfrm.resx">
+      <DependentUpon>QAfrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STORE\QAListfrm.resx">
+      <DependentUpon>QAListfrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockCard.resx">
+      <DependentUpon>StockCard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STORE\QAPrintLabelfrm.resx">
+      <DependentUpon>QAPrintLabelfrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="STORE\SlipNOfrm.resx">
+      <DependentUpon>SlipNOfrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupplyUsefrm.resx">
+      <DependentUpon>SupplyUsefrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testReadText.resx">
+      <DependentUpon>testReadText.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WIP\WIPfrm.resx">
+      <DependentUpon>WIPfrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WIP\WIPNOTE_EXCEL.resx">
+      <DependentUpon>WIPNOTE_EXCEL.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Marketing\SKapp\SKDS.xsc">
+      <DependentUpon>SKDS.xsd</DependentUpon>
+    </None>
+    <None Include="Marketing\SKapp\SKDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SKDS.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Marketing\SKapp\SKDS.xss">
+      <DependentUpon>SKDS.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Production\MAslipDS.xsc">
+      <DependentUpon>MAslipDS.xsd</DependentUpon>
+    </None>
+    <None Include="Production\MAslipDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MAslipDS.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Production\MAslipDS.xss">
+      <DependentUpon>MAslipDS.xsd</DependentUpon>
+    </None>
+    <None Include="SwanProject_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="x64\liblept172.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x64\libtesseract304.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\liblept172.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\libtesseract304.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="log4net">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
