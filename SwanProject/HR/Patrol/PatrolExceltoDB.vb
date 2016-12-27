@@ -116,7 +116,7 @@ Public Class PatrolExceltoDB
 
 
 
-
+            ' PGF.PGB
             oWBa = oApp.Workbooks.Open(PathExcel)
             oWS = oWBa.Sheets(Sheetindex)
             oApp.Visible = False

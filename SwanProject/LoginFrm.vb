@@ -28,8 +28,9 @@
 
     Private Sub LoginFrm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Text = "SwanProject Version " + Application.ProductVersion + " - 20160905"
+        'Me.Invoke(Sub()
 
-
+        '          End Sub)
 
     End Sub
 
@@ -51,5 +52,10 @@
         Else
             Process.Start(osk)
         End If
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim export As New ExporttoExcel
+        export.WriteExcel("‪C:\Users\Dome\Desktop\test.xlsx")
     End Sub
 End Class

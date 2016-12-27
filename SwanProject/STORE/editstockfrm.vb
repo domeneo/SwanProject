@@ -368,7 +368,7 @@ Public Class editstockfrm
             If txtLOT.Text = "" Then Exit Sub
             SQLstr = "select LOTDB,mc_lot,mc_PRDT_THAI,mc_close,mc_date,mc_dept from lotall where mc_lot like '" & txtLOT.Text & "' "
             dtACC.QryDT(SQLstr)
-            ProGbar.PGB.Value = ProGbar.PGB.Value + 1
+            ProGbar.PGB.Value += 1
             If dtACC.dt.Rows.Count > 0 Then
                 If dtACC.dt.Rows(0)("MC_CLOSE") = "9" Then
                     '        If MsgBox("Lot is close.Do you want to continue?", vbYesNo, "Lot is close") = vbYes Then

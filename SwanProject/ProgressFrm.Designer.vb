@@ -22,28 +22,37 @@ Partial Class ProgressFrm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.PGB = New System.Windows.Forms.ProgressBar
+
+        Me.PGB = New MetroFramework.Controls.MetroProgressSpinner()
         Me.SuspendLayout()
+        '
+
         '
         'PGB
         '
-        Me.PGB.Location = New System.Drawing.Point(2, 2)
+        Me.PGB.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PGB.Location = New System.Drawing.Point(0, 0)
+        Me.PGB.Maximum = 100
         Me.PGB.Name = "PGB"
-        Me.PGB.Size = New System.Drawing.Size(347, 29)
-        Me.PGB.TabIndex = 0
+        Me.PGB.Size = New System.Drawing.Size(124, 115)
+        Me.PGB.TabIndex = 1
+        Me.PGB.UseSelectable = True
         '
         'ProgressFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(352, 34)
+        Me.ClientSize = New System.Drawing.Size(124, 115)
+        Me.ControlBox = False
         Me.Controls.Add(Me.PGB)
+
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.Name = "ProgressFrm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Progress"
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents PGB As System.Windows.Forms.ProgressBar
+
+    Friend WithEvents PGB As MetroFramework.Controls.MetroProgressSpinner
 End Class

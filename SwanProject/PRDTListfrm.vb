@@ -38,15 +38,15 @@ Public Class PRDTListfrm
         Dim frm As New PRDTfrm
         With frm
 
-            .lblKEY.Text = GV1.SelectedRows.Item(0).Cells("p_prdt").Value
-            .txtcode.Text = .lblKEY.Text
+            .lblKey.Text = GV1.SelectedRows.Item(0).Cells("p_prdt").Value
+            .txtcode.Text = .lblKey.Text
             .Show()
             .txtcode.Focus()
         End With
     End Sub
     Private Sub QAOUT_Disposed(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Disposed
         conn.Close()
-
+        GC.Collect()
     End Sub
     Private Sub QAOUT_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the '_FAG_Monitor_DBDataSet.ALC022P' table. You can move, or remove it, as needed.
@@ -63,7 +63,7 @@ Public Class PRDTListfrm
 
 
 
-    Private Sub GV1_CellContentDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles GV1.CellContentDoubleClick
+    Private Sub GV1_CellContentDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
         If e.RowIndex = -1 Then Exit Sub
         QA_Detail = New PRDTfrm
         LOTInputfrm.lblKEY.Text = GV1.Rows(e.RowIndex).Cells("p_prdt").Value
@@ -156,7 +156,7 @@ Public Class PRDTListfrm
 
 
 
-    Private Sub GV1_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles GV1.KeyDown
+    Private Sub GV1_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs)
         If e.KeyData = 13 Then
             wheretxt.Focus()
             Edit()
@@ -167,7 +167,7 @@ Public Class PRDTListfrm
     End Sub
 
 
-    Private Sub GV1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles GV1.KeyPress
+    Private Sub GV1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         'If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then
         '    e.KeyChar = ""
         'End If

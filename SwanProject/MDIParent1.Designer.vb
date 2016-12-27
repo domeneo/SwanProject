@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class MDIParent1
-    Inherits System.Windows.Forms.Form
+    Inherits MetroFramework.Forms.MetroForm
 
     'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()>
@@ -9,13 +9,17 @@ Partial Class MDIParent1
             If disposing AndAlso components IsNot Nothing Then
                 components.Dispose()
             End If
+        Catch
+
         Finally
+
             MyBase.Dispose(disposing)
         End Try
     End Sub
 
 
     'Required by the Windows Form Designer
+
     Private components As System.ComponentModel.IContainer
 
     'NOTE: The following procedure is required by the Windows Form Designer
@@ -104,6 +108,7 @@ Partial Class MDIParent1
         Me.PObtn = New System.Windows.Forms.ToolStripMenuItem()
         Me.HrMnu = New System.Windows.Forms.ToolStripDropDownButton()
         Me.PatrolMnu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TimeAttToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PrintQAbtn = New System.Windows.Forms.ToolStripDropDownButton()
         Me.PrintQAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SKapprovalBtn = New System.Windows.Forms.ToolStripButton()
@@ -112,7 +117,6 @@ Partial Class MDIParent1
         Me.EDITSTOCKToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AutosystemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.logoutbtn = New System.Windows.Forms.ToolStripButton()
-        Me.TimeAttToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
@@ -120,12 +124,13 @@ Partial Class MDIParent1
         '
         'MenuStrip
         '
+        Me.MenuStrip.BackColor = System.Drawing.Color.White
         Me.MenuStrip.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileMenu, Me.ViewMenu, Me.ToolsMenu, Me.WindowsMenu, Me.HelpMenu, Me.UPDATEToolStripMenuItem})
-        Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip.Location = New System.Drawing.Point(20, 60)
         Me.MenuStrip.MdiWindowListItem = Me.WindowsMenu
         Me.MenuStrip.Name = "MenuStrip"
-        Me.MenuStrip.Size = New System.Drawing.Size(930, 24)
+        Me.MenuStrip.Size = New System.Drawing.Size(890, 24)
         Me.MenuStrip.TabIndex = 5
         Me.MenuStrip.Text = "MenuStrip"
         '
@@ -381,11 +386,12 @@ Partial Class MDIParent1
         '
         'StatusStrip
         '
+        Me.StatusStrip.BackColor = System.Drawing.Color.White
         Me.StatusStrip.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel, Me.ToolStripStatusLabel1, Me.lblIP, Me.ToolStripStatusLabel2, Me.lblUser, Me.ToolStripStatusLabel3, Me.lblGroup})
-        Me.StatusStrip.Location = New System.Drawing.Point(0, 431)
+        Me.StatusStrip.Location = New System.Drawing.Point(20, 411)
         Me.StatusStrip.Name = "StatusStrip"
-        Me.StatusStrip.Size = New System.Drawing.Size(930, 22)
+        Me.StatusStrip.Size = New System.Drawing.Size(890, 22)
         Me.StatusStrip.TabIndex = 7
         Me.StatusStrip.Text = "StatusStrip"
         '
@@ -438,11 +444,12 @@ Partial Class MDIParent1
         '
         'ToolStrip1
         '
+        Me.ToolStrip1.BackColor = System.Drawing.Color.White
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSstock, Me.AccountBtn, Me.STOREmnu, Me.PrdtMnu, Me.ProDmnu, Me.ToolStripDropDownButton2, Me.ToolStripDropDownButton3, Me.HrMnu, Me.PrintQAbtn, Me.SKapprovalBtn, Me.SupplyUseBTN, Me.ToolStripDropDownButton1, Me.logoutbtn})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 24)
+        Me.ToolStrip1.Location = New System.Drawing.Point(20, 84)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(930, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(890, 25)
         Me.ToolStrip1.TabIndex = 11
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -660,8 +667,14 @@ Partial Class MDIParent1
         'PatrolMnu
         '
         Me.PatrolMnu.Name = "PatrolMnu"
-        Me.PatrolMnu.Size = New System.Drawing.Size(152, 22)
+        Me.PatrolMnu.Size = New System.Drawing.Size(141, 22)
         Me.PatrolMnu.Text = "Patrol Check"
+        '
+        'TimeAttToolStripMenuItem
+        '
+        Me.TimeAttToolStripMenuItem.Name = "TimeAttToolStripMenuItem"
+        Me.TimeAttToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
+        Me.TimeAttToolStripMenuItem.Text = "TimeAtt"
         '
         'PrintQAbtn
         '
@@ -728,12 +741,6 @@ Partial Class MDIParent1
         Me.logoutbtn.Size = New System.Drawing.Size(51, 22)
         Me.logoutbtn.Text = "LogOut"
         '
-        'TimeAttToolStripMenuItem
-        '
-        Me.TimeAttToolStripMenuItem.Name = "TimeAttToolStripMenuItem"
-        Me.TimeAttToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.TimeAttToolStripMenuItem.Text = "TimeAtt"
-        '
         'MDIParent1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -746,6 +753,7 @@ Partial Class MDIParent1
         Me.MainMenuStrip = Me.MenuStrip
         Me.Name = "MDIParent1"
         Me.Text = "SwanProject"
+        Me.TransparencyKey = System.Drawing.Color.Empty
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()

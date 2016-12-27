@@ -640,4 +640,8 @@ Public Class MDIParent1
         frm.MdiParent = Me
         frm.Show()
     End Sub
+
+    Private Sub MDIParent1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        GC.Collect()
+    End Sub
 End Class

@@ -1,11 +1,12 @@
 ﻿Imports Microsoft.Office.Interop.Excel
-
+Imports System.IO
 Imports System.Data.SqlClient
 Imports System.Data
+Imports System.Runtime.InteropServices
 Public Class ExporttoExcel
 
     ' Dim xlsApp As New Microsoft.Office.Interop.Excel.Application
-    Dim xlsApp As New Application
+
     Dim xlsBook As Workbook
     Dim xlsSheet As Worksheet
     Dim DT As System.Data.DataTable
@@ -128,7 +129,7 @@ Public Class ExporttoExcel
     Public Sub QuickShow()
         On Error GoTo ErrorHandler
         ' If rs.RecordCount = 0 Then Exit Sub
-
+        Dim xlsApp As New Application
         xlsBook = xlsApp.Workbooks.Add
         xlsSheet = xlsBook.Sheets.Item(1)
 
@@ -271,7 +272,7 @@ ErrorHandler:
     Public Sub Show()
         'On Error GoTo ErrorHandler
         ' If rs.RecordCount = 0 Then Exit Sub
-
+        Dim xlsApp As New Application
         xlsBook = xlsApp.Workbooks.Add
         xlsSheet = xlsBook.Sheets.Item(1)
 
@@ -339,7 +340,7 @@ ErrorHandler:
     Public Sub QuickShow2()
         On Error GoTo ErrorHandler
         ' If rs.RecordCount = 0 Then Exit Sub
-
+        Dim xlsApp As New Application
         xlsBook = xlsApp.Workbooks.Add
         xlsSheet = xlsBook.Sheets.Item(1)
 
@@ -396,5 +397,159 @@ ErrorHandler:
         Exit Sub
 ErrorHandler:
         MsgBox(Err.Description, , "Error")
+    End Sub
+
+    Public Shared Function ExcelColumnFromNumber(column As Integer) As String
+        Dim columnString As String = ""
+        Dim columnNumber As Integer = column
+        While columnNumber > 0
+            Dim currentLetterNumber As Integer = (columnNumber - 1) Mod 26
+            Dim currentLetter As Char = Chr(currentLetterNumber + 65)
+            columnString = currentLetter & columnString
+            columnNumber = (columnNumber - (currentLetterNumber + 1)) / 26
+        End While
+        Return columnString
+    End Function
+
+    ''' <summary>
+    ''' A -> 1<br/>
+    ''' B -> 2<br/>
+    ''' C -> 3<br/>
+    ''' ...
+    ''' </summary>
+    ''' <param name="column"></param>
+    ''' <returns></returns>
+    Public Shared Function NumberFromExcelColumn(column As String) As Integer
+        Dim retVal As Integer = 0
+        Dim col As String = column.ToUpper()
+        For iChar As Integer = col.Length - 1 To 0 Step -1
+            Dim colPiece As String = col(iChar)
+            Dim colNum As Integer = colPiece - 64
+            retVal = retVal + colNum * CInt(Math.Pow(26, col.Length - (iChar + 1)))
+        Next
+        Return retVal
+    End Function
+
+    Sub WriteExcel(PathExcel As String)
+        Dim oldCI As System.Globalization.CultureInfo =
+         System.Threading.Thread.CurrentThread.CurrentCulture
+        System.Threading.Thread.CurrentThread.CurrentCulture =
+                New System.Globalization.CultureInfo("en-US")
+
+
+
+        Dim oApp As New Application
+        Dim oWBa As Workbook
+        Try
+
+
+            Using TryCast(oApp, IDisposable)
+
+
+
+                Dim oWS As Worksheet
+
+                Dim odlg As New OpenFileDialog
+                odlg.ShowDialog()
+
+                Dim f As New IO.FileInfo(odlg.FileName)
+
+
+                oWBa = oApp.Workbooks.Open(odlg.FileName)
+                oWS = oWBa.Sheets(1)
+                oApp.Visible = False
+
+                oWS.Range("B2").Value = "1"
+                oWS.Range("C2").Value = "1"
+
+
+
+
+                Dim pss As New Printing.PrinterSettings
+                oWS.PrintOutEx(1, 1, 1, False, pss.PrinterName, False, pss.Collate, False, False)
+                'If PGF Is Nothing Then PGF = New ProgressFrm
+
+                'PGF.PGB.Value = 0
+                'PGF.PGB.Maximum = 5
+                'PGF.Show()
+                ''Dim xlRange As Excel.Range
+
+                'Dim dt As New DataTable
+                'dt.Columns.Add("Time_ID", GetType(System.String))
+                'dt.Columns.Add("Shift", GetType(System.String))
+                'dt.Columns.Add("Station", GetType(System.String))
+                'dt.Columns.Add("Time", GetType(System.DateTime))
+                'dt.Columns.Add("Begin", GetType(System.DateTime))
+                'dt.Columns.Add("End", GetType(System.DateTime))
+                'dt.Columns.Add("Period", GetType(Double))
+                '' dt.Columns.Add("Lenght", GetType(Integer))
+
+                'Dim Cel As Object
+                'Dim i As Integer
+                ''For R = 1 To xlRange.Row
+                'PGF.PGB.Value += 1
+
+                'Cel = oWS.Range("B" & 3 & ":e" & 500).Value
+                'i = 3
+
+                'Dim Befid As String = ""
+                'Dim DTime, sBegin, sEnd As DateTime
+                'Dim Period As Double
+                'For i = 3 To 500
+                '    If oWS.Range("E" & i).Value Is Nothing Then Exit For
+                '    If Not oWS.Range("B" & i).Value Is Nothing Then
+                '        If Befid <> oWS.Range("B" & i).Value Then
+
+                '            Befid = oWS.Range("B" & i).Value
+                '            sBegin = Befid.Substring(0, 19)
+                '            sEnd = Befid.Substring(Befid.Length - 19, 19)
+                '            Period = DateDiff(DateInterval.Minute, sBegin, sEnd)
+                '        End If
+
+                '    End If
+
+                '    If IsDate(oWS.Range("E" & i).Value) Then
+                '        DTime = oWS.Range("E" & i).Value
+                '    Else
+                '        DTime = Nothing
+                '    End If
+                '    dt.Rows.Add(Befid, oWS.Range("C" & i & ":C" & i).Value, oWS.Range("D" & i).Value, DTime, sBegin, sEnd, Period)
+
+                'Next
+                'Return dt
+
+                System.Threading.Thread.CurrentThread.CurrentCulture = oldCI
+            End Using
+
+        Catch ex As Exception
+        Finally
+
+
+
+            GC.Collect()
+            GC.WaitForPendingFinalizers()
+
+            If Not oWBa Is Nothing Then
+                Marshal.FinalReleaseComObject(oWBa.Worksheets)
+
+                oWBa.Close(False, Type.Missing, Type.Missing)
+
+                Marshal.FinalReleaseComObject(oWBa)
+            End If
+
+
+
+
+
+            If Not oApp Is Nothing Then
+                oApp.Quit()
+
+                Marshal.FinalReleaseComObject(oApp)
+            End If
+
+
+
+
+        End Try
     End Sub
 End Class

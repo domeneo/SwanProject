@@ -17,13 +17,13 @@ Public Class Timattfrm
             If opt.ShowDialog = DialogResult.Cancel Then
                 Exit Sub
             End If
-            frmPGB.PGB.Maximum = opt.FileNames.Count
-            frmPGB.PGB.Value = 0
+            frmpgb.PGB.Maximum = opt.FileNames.Count
+            frmpgb.PGB.Value = 0
             Using conn As New SqlConnection(Project.swanSQL)
                 conn.Open()
                 For Each filename As String In opt.FileNames
 
-                    frmPGB.PGB.Value += 1
+                    frmpgb.PGB.Value += 1
                     Using sr As New StreamReader(filename)
                         Dim line As String
                         ' Read the stream to a string and write the string to the console.

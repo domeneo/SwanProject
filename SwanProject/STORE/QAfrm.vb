@@ -120,8 +120,8 @@ Public Class QAfrm
             txtbal.Text = 0
 
 
-            PGB.PGB.Maximum = 5
-            PGB.PGB.Value = 0
+            pgb.PGB.Maximum = 5
+            pgb.PGB.Value = 0
             PGB.Show()
 
             Dim TCODE As String
@@ -134,7 +134,7 @@ Public Class QAfrm
             End If
 
             PGB.Text = "INSERT STOCK"
-            PGB.PGB.Value += 1
+            pgb.PGB.Value += 1
             mc.insertSQL("Stock_" & DBCB.Text, "QA", Me, "s_code", conn, True)
             mc.insertSQL("Stock_" & DBCB.Text, "QA", Me, "s_code", connAcc, True)
 
@@ -152,7 +152,7 @@ Public Class QAfrm
                 dtACC.RunCommand(SQLstr, Project.swanpath)
             End If
             PGB.Text = "UPDATE LOT"
-            PGB.PGB.Value += 1
+            pgb.PGB.Value += 1
             If txtRea.Text.ToUpper = "S" Then
                 'เพิ่มLot จัดซื้อ
                 SQLstr = "update  odfile_" & DBCB.Text & " set we_dqty=we_dqty +" & txtQTY.Text & " where we_prdt like '" & txtPrdt.Text & "' and we_code like '" & txtLOT.Text & "'"
@@ -169,12 +169,12 @@ Public Class QAfrm
 
 
             PGB.Text = "CLOSE LOT"
-            PGB.PGB.Value += 1
+            pgb.PGB.Value += 1
             CloseLOT()
 
 
             PGB.Text = "UPDATE BAL"
-            PGB.PGB.Value += 1
+            pgb.PGB.Value += 1
             SQLstr = "update  weno_" & DBCB.Text & " set we_no=we_no + 1"
             '  dtSQL.RunCommand(SQLstr)
             dtACC.RunCommand(SQLstr) 'ชั่วคราว

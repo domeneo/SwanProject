@@ -114,10 +114,11 @@ Public Class SKlistFRM
     End Sub
 
     Function CountSK(dt As DataTable)
+
         Dim c As Integer = 0
         Dim b As String = ""
         For Each dr As DataRow In dt.Rows
-            If dr("E_SKNO").ToString <> b Then
+            If dr(0).ToString <> b Then
                 c += 1
             End If
         Next

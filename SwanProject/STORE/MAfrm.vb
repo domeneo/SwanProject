@@ -181,7 +181,7 @@ Public Class MAfrm
             For Each dr As DataGridViewRow In GV1.Rows
                 If dr.Cells("PRDT").Value Is Nothing Then Continue For
                 prdtin += ",'" & dr.Cells("PRDT").Value & "'"
-        Next
+            Next
 
             prdtin = prdtin.Substring(1)
             Dim SQLSTR2 As String
@@ -227,9 +227,9 @@ Public Class MAfrm
 
             Dim i, i2 As Integer
 
-                    For Each dr As DataGridViewRow In GV1.Rows
-                        If dr.Cells("PRDT").Value Is Nothing Then Continue For
-                        If dr.Cells("QTY").Value = 0 Then Continue For
+            For Each dr As DataGridViewRow In GV1.Rows
+                If dr.Cells("PRDT").Value Is Nothing Then Continue For
+                If dr.Cells("QTY").Value = 0 Then Continue For
                 'For i = 0 To dt.Rows.Count - 1
                 '    If dt.Rows(i)("P_PRDT").ToString = dr.Cells("PRDT").Value Then
 
@@ -257,16 +257,16 @@ Public Class MAfrm
                 dtACC.RunCommand(SQLstr, MD2connSTR)
 
 
-                        ' dtSQL.RunCommand(SQLstr)
-                        'dtACC.RunCommand(SQLstr)
-                        '  dt.Rows(i)("p_bal") = dt.Rows(i)("p_bal") - dr.Cells("QTY").Value
+                ' dtSQL.RunCommand(SQLstr)
+                'dtACC.RunCommand(SQLstr)
+                '  dt.Rows(i)("p_bal") = dt.Rows(i)("p_bal") - dr.Cells("QTY").Value
 
 
 
 
 
 
-                        SQLbatch += SQLstr + vbCrLf
+                SQLbatch += SQLstr + vbCrLf
 
                 If txtRea.Text = "M" Or txtRea.Text = "A" Then
                     ' SQLstr = "update  MAFILE_" & DBCB.Text & " set MA_RQTY=MA_RQTY + " & dr.Cells("QTY").Value & " where MA_PRDT like '" & dr.Cells("PRDT").Value & "' and MA_CODE like '" & txtLOT.Text & "'"
@@ -298,11 +298,11 @@ Public Class MAfrm
 
                     '  dtSQL.RunCommand(SQLstr)
                     dtACC.RunCommand(SQLstr, Project.md7_boi)
-                            ' cmd.CommandText = SQLstr
-                            ' cmd.ExecuteNonQuery()
-                            SQLbatch += SQLstr + vbCrLf
-                        End If
-                    Next
+                    ' cmd.CommandText = SQLstr
+                    ' cmd.ExecuteNonQuery()
+                    SQLbatch += SQLstr + vbCrLf
+                End If
+            Next
 
 
             ' da.Update(dt)

@@ -104,5 +104,23 @@ Public Class ExporttoExcel_EP
         Next
         Return retVal
     End Function
+    Sub WriteExcel()
+
+        Dim path As String
+        Dim fileinfo As New FileInfo(path)
+        If fileinfo.Exists = False Then
+            MsgBox("File not Exist")
+            Exit Sub
+        End If
+        Using pakage As New ExcelPackage(fileinfo)
+            Dim ws As ExcelWorksheet = pakage.Workbook.Worksheets(0)
+            ws.Cells(1, 1).Value = "sad"
+            ws.Cells(2, 1).Value = "Dad"
+            ws.Cells(3, 1).Value = "Dad"
+            pakage.Save()
+
+        End Using
+
+    End Sub
 
 End Class

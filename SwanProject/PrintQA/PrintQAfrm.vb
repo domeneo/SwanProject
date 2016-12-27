@@ -25,11 +25,11 @@ Public Class PrintQAfrm
                 sqlstr = "SELECT MC_REA, MC_LOT, MC_DEPT, P_PLACE, MC_PRDT, MC_QTY, MC_LOTQTY, P_ENAME, P_SPEC, MC_DATE, MC_PRED, p_unit" +
 " FROM PRDT_" & DBCB.Text & " RIGHT JOIN LOT_" & DBCB.Text & " ON PRDT_" & DBCB.Text & ".P_PRDT = LOT_" & DBCB.Text & ".MC_PRDT "
 
-            ElseIf RB_s.Checked Then
+            ElseIf RB_S.Checked Then
 
                 sqlstr = "SELECT WE_REA, WE_CODE, WE_SUP, S_NAME, P_PLACE, WE_USE, WE_PDATE, P_ENAME, P_TNAME, P_SPEC, P_UNIT, WE_QTY, WE_DQTY, [WE_QTY]-[WE_DQTY] AS useQTY, WE_PRDT" +
     " FROM (ODFILE_" & DBCB.Text & " LEFT JOIN PRDT_" & DBCB.Text & " ON ODFILE_" & DBCB.Text & ".WE_PRDT = PRDT_" & DBCB.Text & ".P_PRDT) LEFT JOIN SUPMAST_" & DBCB.Text & " ON ODFILE_" & DBCB.Text & ".WE_SUP = SUPMAST_" & DBCB.Text & ".S_SUP"
-            ElseIf RB_c.Checked Then
+            ElseIf RB_C.Checked Then
                 sqlstr = "SELECT 'D' as we_rea, C_LOT as WE_CODE, c_sup as WE_SUP, S_NAME, P_PLACE,'' as WE_USE,c_date as  WE_PDATE, P_ENAME, P_TNAME, P_SPEC, P_UNIT,'' as  WE_QTY,'' as  WE_DQTY, c_qty AS useQTY, c_prdt as WE_PRDT" +
     " FROM (claim LEFT JOIN PRDT_" & DBCB.Text & " ON claim.c_PRDT = PRDT_" & DBCB.Text & ".P_PRDT) LEFT JOIN SUPMAST_" & DBCB.Text & " ON claim.c_sup = SUPMAST_BOI.S_SUP"
 
@@ -55,7 +55,7 @@ Public Class PrintQAfrm
 
                 If RB_M.Checked Then
                     sqlstr += " where mc_lot in (" & inLot & ")"
-                ElseIf RB_s.Checked Then
+                ElseIf RB_S.Checked Then
                     sqlstr += " where WE_CODE in (" & inLot & ")"
                 ElseIf RB_C.Checked Then
                     sqlstr += " where c_lot in (" & inLot & ")"
