@@ -200,6 +200,7 @@ Partial Class CloseLOTfrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1231, 566)
         Me.Controls.Add(Me.btnExcel)
         Me.Controls.Add(Me.Findbtn)

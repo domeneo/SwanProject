@@ -642,6 +642,11 @@ Public Class MDIParent1
     End Sub
 
     Private Sub MDIParent1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        If Me.HasChildren Then
+            For Each frm As Form In Me.MdiChildren
+                frm.Close()
+            Next
+        End If
         GC.Collect()
     End Sub
 End Class

@@ -429,6 +429,7 @@ Public Class MBfrm
         'lblKEY.Text = txtCode.Text
         GV1.Rows.Clear()
         txtLOT.Focus()
+
     End Sub
     Public Sub EDITDATA()
         Try

@@ -17,14 +17,14 @@
             Dim sqlstr As String
             sqlstr = "SELECT MC_DATE, MC_PRED, MC_DEPT, MC_LOT, MC_CLOSE as Close_B,Maxdate as Lastwe, [LOT].[CLOSE] as Close_A,lot.lot_date, MC_PRDT_THAI, MC_LOTQTY, MC_QTY, P_ENAME, P_SPEC"
             sqlstr = sqlstr + " FROM ([LOT] RIGHT JOIN (PRDT" & DBCB.Text & " RIGHT JOIN LOT" & DBCB.Text & " ON PRDT" & DBCB.Text & ".P_PRDT = LOT" & DBCB.Text & ".MC_PRDT_THAI) ON [LOT].[LOT] = LOT" & DBCB.Text & ".MC_LOT) left join Lastwe_" & DBCB.Text & " on Lastwe_" & DBCB.Text & ".s_pre=LOT" & DBCB.Text & ".MC_LOT"
-            sqlstr = sqlstr + " WHERE ((MC_DATE)>='20080101') AND ([LOT].DB='" & DBCB.Text & "' or LOT.DB is null)"
+            sqlstr = sqlstr + " WHERE ((MC_DATE)>='20100101') AND ([LOT].DB='" & DBCB.Text & "' or LOT.DB is null)"
             sqlstr += " ORDER BY MC_DATE"
             dt = dtacc.QryDT(sqlstr, Connstr)
             Return dt
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
-
+            GC.Collect()
             frmprogress.Close()
         End Try
 

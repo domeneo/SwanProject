@@ -165,17 +165,17 @@ Partial Class MAfrm
         'txtPrdt
         '
         Me.txtPrdt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtPrdt.Location = New System.Drawing.Point(65, 489)
+        Me.txtPrdt.Location = New System.Drawing.Point(65, 476)
         Me.txtPrdt.MaxLength = 11
         Me.txtPrdt.Name = "txtPrdt"
         Me.txtPrdt.Size = New System.Drawing.Size(121, 22)
-        Me.txtPrdt.TabIndex = 6
+        Me.txtPrdt.TabIndex = 4
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label5.Location = New System.Drawing.Point(25, 489)
+        Me.Label5.Location = New System.Drawing.Point(25, 476)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(40, 16)
         Me.Label5.TabIndex = 8
@@ -185,7 +185,7 @@ Partial Class MAfrm
         '
         Me.txtStock.Enabled = False
         Me.txtStock.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtStock.Location = New System.Drawing.Point(316, 520)
+        Me.txtStock.Location = New System.Drawing.Point(316, 507)
         Me.txtStock.MaxLength = 20
         Me.txtStock.Name = "txtStock"
         Me.txtStock.Size = New System.Drawing.Size(39, 22)
@@ -196,7 +196,7 @@ Partial Class MAfrm
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label6.Location = New System.Drawing.Point(259, 523)
+        Me.Label6.Location = New System.Drawing.Point(259, 510)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(51, 16)
         Me.Label6.TabIndex = 10
@@ -205,17 +205,17 @@ Partial Class MAfrm
         'txtQTY
         '
         Me.txtQTY.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtQTY.Location = New System.Drawing.Point(241, 489)
+        Me.txtQTY.Location = New System.Drawing.Point(241, 476)
         Me.txtQTY.MaxLength = 8
         Me.txtQTY.Name = "txtQTY"
         Me.txtQTY.Size = New System.Drawing.Size(58, 22)
-        Me.txtQTY.TabIndex = 7
+        Me.txtQTY.TabIndex = 5
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label8.Location = New System.Drawing.Point(192, 492)
+        Me.Label8.Location = New System.Drawing.Point(192, 479)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(43, 16)
         Me.Label8.TabIndex = 14
@@ -243,7 +243,7 @@ Partial Class MAfrm
         'txtHand
         '
         Me.txtHand.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtHand.Location = New System.Drawing.Point(453, 550)
+        Me.txtHand.Location = New System.Drawing.Point(453, 537)
         Me.txtHand.MaxLength = 6
         Me.txtHand.Name = "txtHand"
         Me.txtHand.Size = New System.Drawing.Size(100, 22)
@@ -253,7 +253,7 @@ Partial Class MAfrm
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label11.Location = New System.Drawing.Point(398, 556)
+        Me.Label11.Location = New System.Drawing.Point(398, 543)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(49, 16)
         Me.Label11.TabIndex = 20
@@ -343,7 +343,7 @@ Partial Class MAfrm
         Me.GV1.Location = New System.Drawing.Point(17, 172)
         Me.GV1.Name = "GV1"
         Me.GV1.ReadOnly = True
-        Me.GV1.Size = New System.Drawing.Size(527, 310)
+        Me.GV1.Size = New System.Drawing.Size(527, 289)
         Me.GV1.TabIndex = 30
         '
         'PRDT
@@ -373,7 +373,7 @@ Partial Class MAfrm
         '
         'addPrdtbtn
         '
-        Me.addPrdtbtn.Location = New System.Drawing.Point(319, 488)
+        Me.addPrdtbtn.Location = New System.Drawing.Point(319, 475)
         Me.addPrdtbtn.Name = "addPrdtbtn"
         Me.addPrdtbtn.Size = New System.Drawing.Size(75, 23)
         Me.addPrdtbtn.TabIndex = 8
@@ -384,7 +384,7 @@ Partial Class MAfrm
         '
         Me.txtPrdtSpec.Enabled = False
         Me.txtPrdtSpec.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtPrdtSpec.Location = New System.Drawing.Point(84, 547)
+        Me.txtPrdtSpec.Location = New System.Drawing.Point(84, 534)
         Me.txtPrdtSpec.MaxLength = 20
         Me.txtPrdtSpec.Name = "txtPrdtSpec"
         Me.txtPrdtSpec.Size = New System.Drawing.Size(226, 21)
@@ -395,7 +395,7 @@ Partial Class MAfrm
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label7.Location = New System.Drawing.Point(26, 550)
+        Me.Label7.Location = New System.Drawing.Point(26, 537)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(52, 16)
         Me.Label7.TabIndex = 33
@@ -405,7 +405,7 @@ Partial Class MAfrm
         '
         Me.txtPrdtName.Enabled = False
         Me.txtPrdtName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtPrdtName.Location = New System.Drawing.Point(84, 520)
+        Me.txtPrdtName.Location = New System.Drawing.Point(84, 507)
         Me.txtPrdtName.MaxLength = 20
         Me.txtPrdtName.Name = "txtPrdtName"
         Me.txtPrdtName.Size = New System.Drawing.Size(168, 21)
@@ -416,7 +416,7 @@ Partial Class MAfrm
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label9.Location = New System.Drawing.Point(25, 523)
+        Me.Label9.Location = New System.Drawing.Point(25, 510)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(55, 16)
         Me.Label9.TabIndex = 35
@@ -550,7 +550,7 @@ Partial Class MAfrm
         '
         Me.txtPrice.Enabled = False
         Me.txtPrice.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtPrice.Location = New System.Drawing.Point(84, 574)
+        Me.txtPrice.Location = New System.Drawing.Point(84, 561)
         Me.txtPrice.MaxLength = 20
         Me.txtPrice.Name = "txtPrice"
         Me.txtPrice.Size = New System.Drawing.Size(90, 21)
@@ -590,7 +590,7 @@ Partial Class MAfrm
         '
         'DelPrdtbtn
         '
-        Me.DelPrdtbtn.Location = New System.Drawing.Point(400, 489)
+        Me.DelPrdtbtn.Location = New System.Drawing.Point(400, 476)
         Me.DelPrdtbtn.Name = "DelPrdtbtn"
         Me.DelPrdtbtn.Size = New System.Drawing.Size(75, 23)
         Me.DelPrdtbtn.TabIndex = 46
@@ -602,7 +602,7 @@ Partial Class MAfrm
         '
         Me.lblGVCount.AutoSize = True
         Me.lblGVCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.lblGVCount.Location = New System.Drawing.Point(491, 492)
+        Me.lblGVCount.Location = New System.Drawing.Point(491, 479)
         Me.lblGVCount.Name = "lblGVCount"
         Me.lblGVCount.Size = New System.Drawing.Size(0, 16)
         Me.lblGVCount.TabIndex = 47
@@ -625,7 +625,7 @@ Partial Class MAfrm
         Me.txtNote.MaxLength = 0
         Me.txtNote.Multiline = True
         Me.txtNote.Name = "txtNote"
-        Me.txtNote.Size = New System.Drawing.Size(252, 291)
+        Me.txtNote.Size = New System.Drawing.Size(252, 270)
         Me.txtNote.TabIndex = 5
         '
         'Label18
@@ -642,7 +642,7 @@ Partial Class MAfrm
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label19.Location = New System.Drawing.Point(445, 577)
+        Me.Label19.Location = New System.Drawing.Point(445, 564)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(222, 16)
         Me.Label19.TabIndex = 51

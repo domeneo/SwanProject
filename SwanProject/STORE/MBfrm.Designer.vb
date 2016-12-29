@@ -22,6 +22,7 @@ Partial Class MBfrm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtLOT = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -84,9 +85,11 @@ Partial Class MBfrm
         Me.Label15 = New System.Windows.Forms.Label()
         Me.txtNote = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         CType(Me.GV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GBPrdt.SuspendLayout()
         Me.GBLOT.SuspendLayout()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -112,7 +115,7 @@ Partial Class MBfrm
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label2.Location = New System.Drawing.Point(311, 496)
+        Me.Label2.Location = New System.Drawing.Point(311, 403)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(66, 16)
         Me.Label2.TabIndex = 2
@@ -160,7 +163,7 @@ Partial Class MBfrm
         'txtPrdt
         '
         Me.txtPrdt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtPrdt.Location = New System.Drawing.Point(63, 493)
+        Me.txtPrdt.Location = New System.Drawing.Point(63, 400)
         Me.txtPrdt.MaxLength = 11
         Me.txtPrdt.Name = "txtPrdt"
         Me.txtPrdt.Size = New System.Drawing.Size(121, 22)
@@ -170,7 +173,7 @@ Partial Class MBfrm
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label5.Location = New System.Drawing.Point(23, 493)
+        Me.Label5.Location = New System.Drawing.Point(23, 400)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(40, 16)
         Me.Label5.TabIndex = 8
@@ -179,7 +182,7 @@ Partial Class MBfrm
         'txtQTY
         '
         Me.txtQTY.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtQTY.Location = New System.Drawing.Point(239, 493)
+        Me.txtQTY.Location = New System.Drawing.Point(239, 400)
         Me.txtQTY.MaxLength = 8
         Me.txtQTY.Name = "txtQTY"
         Me.txtQTY.Size = New System.Drawing.Size(58, 22)
@@ -189,7 +192,7 @@ Partial Class MBfrm
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label8.Location = New System.Drawing.Point(190, 496)
+        Me.Label8.Location = New System.Drawing.Point(190, 403)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(43, 16)
         Me.Label8.TabIndex = 14
@@ -217,7 +220,7 @@ Partial Class MBfrm
         'txtHand
         '
         Me.txtHand.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtHand.Location = New System.Drawing.Point(445, 564)
+        Me.txtHand.Location = New System.Drawing.Point(445, 471)
         Me.txtHand.MaxLength = 6
         Me.txtHand.Name = "txtHand"
         Me.txtHand.Size = New System.Drawing.Size(100, 22)
@@ -227,7 +230,7 @@ Partial Class MBfrm
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label11.Location = New System.Drawing.Point(390, 570)
+        Me.Label11.Location = New System.Drawing.Point(390, 477)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(49, 16)
         Me.Label11.TabIndex = 20
@@ -316,7 +319,7 @@ Partial Class MBfrm
         Me.GV1.Location = New System.Drawing.Point(17, 172)
         Me.GV1.Name = "GV1"
         Me.GV1.ReadOnly = True
-        Me.GV1.Size = New System.Drawing.Size(736, 314)
+        Me.GV1.Size = New System.Drawing.Size(736, 222)
         Me.GV1.TabIndex = 30
         '
         'PRDT
@@ -377,7 +380,7 @@ Partial Class MBfrm
         '
         'addPrdtbtn
         '
-        Me.addPrdtbtn.Location = New System.Drawing.Point(469, 494)
+        Me.addPrdtbtn.Location = New System.Drawing.Point(469, 401)
         Me.addPrdtbtn.Name = "addPrdtbtn"
         Me.addPrdtbtn.Size = New System.Drawing.Size(75, 23)
         Me.addPrdtbtn.TabIndex = 11
@@ -407,7 +410,7 @@ Partial Class MBfrm
         '
         'DelPrdtbtn
         '
-        Me.DelPrdtbtn.Location = New System.Drawing.Point(469, 523)
+        Me.DelPrdtbtn.Location = New System.Drawing.Point(469, 430)
         Me.DelPrdtbtn.Name = "DelPrdtbtn"
         Me.DelPrdtbtn.Size = New System.Drawing.Size(75, 23)
         Me.DelPrdtbtn.TabIndex = 46
@@ -419,7 +422,7 @@ Partial Class MBfrm
         '
         Me.CBREA.FormattingEnabled = True
         Me.CBREA.Items.AddRange(New Object() {"S", "R", "A", "B"})
-        Me.CBREA.Location = New System.Drawing.Point(384, 492)
+        Me.CBREA.Location = New System.Drawing.Point(384, 399)
         Me.CBREA.Name = "CBREA"
         Me.CBREA.Size = New System.Drawing.Size(39, 21)
         Me.CBREA.TabIndex = 7
@@ -429,7 +432,7 @@ Partial Class MBfrm
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label13.Location = New System.Drawing.Point(149, 523)
+        Me.Label13.Location = New System.Drawing.Point(149, 430)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(77, 16)
         Me.Label13.TabIndex = 50
@@ -439,7 +442,7 @@ Partial Class MBfrm
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label14.Location = New System.Drawing.Point(19, 523)
+        Me.Label14.Location = New System.Drawing.Point(19, 430)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(53, 16)
         Me.Label14.TabIndex = 51
@@ -449,7 +452,7 @@ Partial Class MBfrm
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label17.Location = New System.Drawing.Point(305, 523)
+        Me.Label17.Location = New System.Drawing.Point(305, 430)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(70, 16)
         Me.Label17.TabIndex = 52
@@ -458,7 +461,7 @@ Partial Class MBfrm
         'txtDept
         '
         Me.txtDept.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtDept.Location = New System.Drawing.Point(72, 520)
+        Me.txtDept.Location = New System.Drawing.Point(72, 427)
         Me.txtDept.MaxLength = 3
         Me.txtDept.Name = "txtDept"
         Me.txtDept.Size = New System.Drawing.Size(58, 22)
@@ -467,7 +470,7 @@ Partial Class MBfrm
         'txtCond
         '
         Me.txtCond.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtCond.Location = New System.Drawing.Point(232, 520)
+        Me.txtCond.Location = New System.Drawing.Point(232, 427)
         Me.txtCond.MaxLength = 8
         Me.txtCond.Name = "txtCond"
         Me.txtCond.Size = New System.Drawing.Size(58, 22)
@@ -476,7 +479,7 @@ Partial Class MBfrm
         'txtSUP
         '
         Me.txtSUP.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.txtSUP.Location = New System.Drawing.Point(381, 521)
+        Me.txtSUP.Location = New System.Drawing.Point(381, 428)
         Me.txtSUP.MaxLength = 8
         Me.txtSUP.Name = "txtSUP"
         Me.txtSUP.Size = New System.Drawing.Size(58, 22)
@@ -491,7 +494,7 @@ Partial Class MBfrm
         Me.GBPrdt.Controls.Add(Me.Label9)
         Me.GBPrdt.Controls.Add(Me.txtPrdtSpec)
         Me.GBPrdt.Controls.Add(Me.Label7)
-        Me.GBPrdt.Location = New System.Drawing.Point(19, 548)
+        Me.GBPrdt.Location = New System.Drawing.Point(19, 455)
         Me.GBPrdt.Name = "GBPrdt"
         Me.GBPrdt.Size = New System.Drawing.Size(327, 103)
         Me.GBPrdt.TabIndex = 56
@@ -683,12 +686,16 @@ Partial Class MBfrm
         Me.Label18.TabIndex = 59
         Me.Label18.Text = "NOTE:"
         '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
         'MBfrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1052, 658)
+        Me.ClientSize = New System.Drawing.Size(1052, 570)
         Me.Controls.Add(Me.txtNote)
         Me.Controls.Add(Me.Label18)
         Me.Controls.Add(Me.AddBtn)
@@ -731,12 +738,13 @@ Partial Class MBfrm
         Me.Name = "MBfrm"
         Me.Text = "MB"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        CType(Me.GV1,System.ComponentModel.ISupportInitialize).EndInit
-        Me.GBPrdt.ResumeLayout(false)
-        Me.GBPrdt.PerformLayout
-        Me.GBLOT.ResumeLayout(false)
-        Me.GBLOT.PerformLayout
-        Me.ResumeLayout(false)
+        CType(Me.GV1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GBPrdt.ResumeLayout(False)
+        Me.GBPrdt.PerformLayout()
+        Me.GBLOT.ResumeLayout(False)
+        Me.GBLOT.PerformLayout()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
         Me.PerformLayout
 
 End Sub
@@ -802,4 +810,5 @@ End Sub
     Friend WithEvents cbLotlock As CheckBox
     Friend WithEvents txtNote As TextBox
     Friend WithEvents Label18 As Label
+    Friend WithEvents ErrorProvider1 As ErrorProvider
 End Class

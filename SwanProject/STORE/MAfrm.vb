@@ -365,6 +365,7 @@ Public Class MAfrm
 
         SwitchMode("ADD")
         txtRea.Focus()
+        txtRea.Focus()
     End Sub
     Private Sub DelBtn_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DelBtn.Click
         If MsgBox("Confirm to Delete?", MsgBoxStyle.YesNo, "Warning") = MsgBoxResult.Yes Then
@@ -541,6 +542,7 @@ Public Class MAfrm
 
         Finally
             txtPrdt.Focus()
+            txtPrdt.Focus()
 
         End Try
 
@@ -558,6 +560,7 @@ Public Class MAfrm
         'txtCode.Text = ScCLS.getMANO(DBCB.Text)
         'lblKEY.Text = txtCode.Text
         GV1.Rows.Clear()
+        txtRea.Focus()
         txtRea.Focus()
     End Sub
     Sub EDITDATA()
@@ -601,11 +604,13 @@ Public Class MAfrm
         If e.KeyCode <> Keys.Enter Then Exit Sub
         If txtDate.Text = "" Then
             txtDate.Focus()
+            txtDate.Focus()
             MsgBox("Please input Date")
 
             Exit Sub
         End If
         If Not Datec.Checkdate(txtDate.Text) Then
+            txtDate.Focus()
             txtDate.Focus()
             Exit Sub
         End If
@@ -615,8 +620,10 @@ Public Class MAfrm
             SelectTextTB(txtDate)
             MsgBox("Date before lot date")
             txtDate.Focus()
+            txtDate.Focus()
         End If
         If txtDate.Text <= ScCLS.getLockDate(DBCB.Text) Then
+            txtDate.Focus()
             txtDate.Focus()
             SelectTextTB(txtDate)
             MsgBox("STOCK CARD IS PRINT")

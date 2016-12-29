@@ -58,4 +58,8 @@
         Dim export As New ExporttoExcel
         export.WriteExcel("‪C:\Users\Dome\Desktop\test.xlsx")
     End Sub
+
+    Private Sub MetroTile1_Click(sender As Object, e As EventArgs)
+
+    End Sub
 End Class

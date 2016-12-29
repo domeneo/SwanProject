@@ -204,8 +204,10 @@ Public Class QAfrm
 
 
             SwitchMode("Add")
-            txtCode.Focus()
+
             MsgBox("บันทึกสำเร็จ CODE : " & TCODE, MsgBoxStyle.OkOnly, "Success")
+            txtRea.Focus()
+            'txtRea.Focus()
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
