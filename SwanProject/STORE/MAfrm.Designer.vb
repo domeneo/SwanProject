@@ -169,7 +169,7 @@ Partial Class MAfrm
         Me.txtPrdt.MaxLength = 11
         Me.txtPrdt.Name = "txtPrdt"
         Me.txtPrdt.Size = New System.Drawing.Size(121, 22)
-        Me.txtPrdt.TabIndex = 4
+        Me.txtPrdt.TabIndex = 6
         '
         'Label5
         '
@@ -209,7 +209,7 @@ Partial Class MAfrm
         Me.txtQTY.MaxLength = 8
         Me.txtQTY.Name = "txtQTY"
         Me.txtQTY.Size = New System.Drawing.Size(58, 22)
-        Me.txtQTY.TabIndex = 5
+        Me.txtQTY.TabIndex = 7
         '
         'Label8
         '
@@ -626,7 +626,7 @@ Partial Class MAfrm
         Me.txtNote.Multiline = True
         Me.txtNote.Name = "txtNote"
         Me.txtNote.Size = New System.Drawing.Size(252, 270)
-        Me.txtNote.TabIndex = 5
+        Me.txtNote.TabIndex = 9
         '
         'Label18
         '

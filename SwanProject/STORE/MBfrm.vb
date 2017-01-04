@@ -49,9 +49,13 @@ Public Class MBfrm
             txtPrdt.Enabled = True
             txtQTY.Enabled = True
             Dim datestr As String
+
+            'Nofocus
             datestr = dtSQL.ExScalar("select convert(varchar,getdate(),120)")
             datestr = Datec.Date120TOstring(datestr)
             txtDate.Text = datestr
+
+
             ' datestr = dtACC.ExScalar("select Format(Now(), 'yyyyMMdd')")
 
             '  txtDate.Text = Datec.DateTOstring(datestr)
@@ -85,7 +89,7 @@ Public Class MBfrm
         mc.OutDB = "SQL"
 
 
-        AddSendtab(Me)
+        AddSendtab(Me, "txtlot")
         RemoveHandler txtPrdt.KeyDown, AddressOf TextBox_Keydown
         RemoveHandler txtHand.KeyDown, AddressOf TextBox_Keydown
         'Dim Autocom As New autocompleteCLS
@@ -304,10 +308,16 @@ Public Class MBfrm
     End Sub
     Dim LOTDT As New DataTable
     Sub AutocomLOT()
-        dtSQL.conn = conn
+        Try
+
+            dtSQL.conn = conn
         dtSQL.QryDT("select MC_LOT from LOT_" & DBCB.Text & " where MC_LOT not like '' order by MC_LOT")
         LOTDT = dtSQL.dt
-        AutoCom.AutoCompleteTextBox(txtLOT, LOTDT)
+            AutoCom.AutoCompleteTextBox(txtLOT, LOTDT)
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Sub CloseLOT()
@@ -337,9 +347,11 @@ Public Class MBfrm
 
 
             ProGbar.Text = "กำลังตรวจสอบ LOT"
-            ProGbar.Show()
             ProGbar.PGB.Maximum = 2
             ProGbar.PGB.Value = 0
+            ProGbar.Show()
+
+
 
             If txtLOT.Text = "" Then Exit Sub
             SQLstr = "select LOTDB,mc_lot,mc_PRDT_THAI,mc_close,mc_date,mc_dept,mc_lock from lotall where mc_lot like '" & txtLOT.Text & "' "
@@ -371,8 +383,8 @@ Public Class MBfrm
 
 
                     MsgBox("Lot is Lock.")
-
-                    ProGbar.Close()
+                    '
+                    ' ProGbar.Close()
 
                 Else
                     'SQLstr = "select *  from BOM_" & rs!LOTDB & " where b_PCODE like '" & rs!mc_prdt_thai & "'"
@@ -406,19 +418,23 @@ Public Class MBfrm
         Finally
 
             ProGbar.Close()
-            ProGbar.Dispose()
+            '  ProGbar.Dispose()
+            txtPrdt.Focus()
+            txtPrdt.Focus()
+
         End Try
 
 
     End Sub
     Private Sub txtLOT_KeyDown(sender As Object, e As KeyEventArgs) Handles txtLOT.KeyDown
         If e.KeyCode <> Keys.Enter Then Exit Sub
-        Dim thd As New Threading.Thread(AddressOf CheckLOT)
+        'Dim thd As New Threading.Thread(AddressOf CheckLOT)
 
 
-        thd.IsBackground = True
-        thd.Start()
-        ' CheckLOT()
+        'thd.IsBackground = True
+        'thd.Start()
+        '   txtPrdt.Focus()
+        CheckLOT()
     End Sub
 
 
@@ -428,6 +444,7 @@ Public Class MBfrm
         'txtCode.Text = ScCLS.getMANO(DBCB.Text)
         'lblKEY.Text = txtCode.Text
         GV1.Rows.Clear()
+        txtLOT.Focus()
         txtLOT.Focus()
 
     End Sub
@@ -579,7 +596,7 @@ Public Class MBfrm
             Me.BackColor = Color.LightBlue
 
         End If
-
+        'Nofocus
         AutocomLOT()
         AutocomPRDT()
     End Sub
@@ -723,5 +740,9 @@ Public Class MBfrm
             End If
 
         End If
+    End Sub
+
+    Private Sub txtLOT_TextChanged(sender As Object, e As EventArgs) Handles txtLOT.TextChanged
+
     End Sub
 End Class

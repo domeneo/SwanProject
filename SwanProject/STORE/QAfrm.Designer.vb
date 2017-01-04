@@ -145,6 +145,7 @@ Partial Class QAfrm
         '
         'txtPrdt
         '
+        Me.txtPrdt.Enabled = False
         Me.txtPrdt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.txtPrdt.Location = New System.Drawing.Point(65, 156)
         Me.txtPrdt.MaxLength = 11

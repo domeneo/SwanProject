@@ -162,8 +162,10 @@ Public Class LOTInputfrm
 
         ClearBox(Me)
         SwitchMode("ADD")
-        TXTCODE.Focus()
+
         MsgBox("บันทึกสำเร็จ", MsgBoxStyle.OkOnly, "Success")
+        TXTCODE.Focus()
+        TXTCODE.Focus()
         'Catch ex As Exception
         ' MsgBox(ex.Message)
         ' End Try

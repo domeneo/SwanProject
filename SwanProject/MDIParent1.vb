@@ -649,4 +649,35 @@ Public Class MDIParent1
         End If
         GC.Collect()
     End Sub
+    Dim dumpsql As New DumpToSQLcls
+    Private Sub PRDTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PRDTToolStripMenuItem.Click
+        dumpsql.DumptoSQL("PRDT_BOI")
+        dumpsql.DumptoSQL("PRDT_TAX")
+    End Sub
+
+    Private Sub BOMToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BOMToolStripMenuItem.Click
+        dumpsql.DumptoSQL("BOM_BOI")
+        dumpsql.DumptoSQL("BOM_TAX")
+    End Sub
+
+    Private Sub LOTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LOTToolStripMenuItem.Click
+        dumpsql.DumptoSQL("LOT_BOI")
+        dumpsql.DumptoSQL("LOT_TAX")
+    End Sub
+
+    Private Sub ALLToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ALLToolStripMenuItem.Click
+        dumpsql.Run()
+    End Sub
+
+    Private Sub EMPLOYEEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EMPLOYEEToolStripMenuItem.Click
+        Dim frm As New Emplistfrm
+        frm.MdiParent = Me
+        frm.Show()
+    End Sub
+
+    Private Sub EMPlistToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EMPlistToolStripMenuItem.Click
+        Dim frm As New Emplistfrm
+        frm.MdiParent = Me
+        frm.Show()
+    End Sub
 End Class

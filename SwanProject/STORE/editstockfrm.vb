@@ -417,12 +417,12 @@ Public Class editstockfrm
     End Sub
     Private Sub txtLOT_KeyDown(sender As Object, e As KeyEventArgs) Handles txtLOT.KeyDown
         If e.KeyCode <> Keys.Enter Then Exit Sub
-        Dim thd As New Threading.Thread(AddressOf CheckLOT)
+        'Dim thd As New Threading.Thread(AddressOf CheckLOT)
 
 
-        thd.IsBackground = True
-        thd.Start()
-        ' CheckLOT()
+        'thd.IsBackground = True
+        'thd.Start()
+        CheckLOT()
     End Sub
 
 

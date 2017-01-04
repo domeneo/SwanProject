@@ -151,4 +151,8 @@ Public Class autoFrm
     Private Sub autoFrm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
+    Private Sub btnPRDTsql_Click(sender As Object, e As EventArgs) Handles btnPRDTsql.Click
+
+    End Sub
 End Class

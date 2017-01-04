@@ -206,12 +206,15 @@ Public Class QAfrm
             SwitchMode("Add")
 
             MsgBox("บันทึกสำเร็จ CODE : " & TCODE, MsgBoxStyle.OkOnly, "Success")
-            txtRea.Focus()
+            '   txtRea.Focus()
             'txtRea.Focus()
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
+
             PGB.Close()
+            txtRea.Focus()
+            txtRea.Focus()
         End Try
     End Sub
     Function GETQA(ByVal ID As String) As DataTable
@@ -459,14 +462,20 @@ Public Class QAfrm
         End If
         SendTab(e.KeyCode)
     End Sub
-
+    Dim Autocom As New autocompleteCLS
+    Dim dtLot As New DataTable
     Private Sub DBCB_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DBCB.SelectedIndexChanged
+        Dim sqlstr As String
         If DBCB.Text = "BOI" Then
             Me.BackColor = Color.White
+
         Else
             Me.BackColor = Color.LightBlue
 
         End If
+        sqlstr = "select MC_LOT from LOT_" & DBCB.Text
+        dtLot = dtSQL.QryDT(sqlstr, Project.swanSQL)
+        Autocom.AutoCompleteTextBox(txtLOT, dtLot)
     End Sub
 
 

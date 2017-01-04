@@ -31,6 +31,7 @@ Partial Class autoFrm
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtBackup = New System.Windows.Forms.TextBox()
         Me.lblErr = New System.Windows.Forms.Label()
+        Me.btnPRDTsql = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtNowTime
@@ -108,11 +109,21 @@ Partial Class autoFrm
         Me.lblErr.Size = New System.Drawing.Size(0, 18)
         Me.lblErr.TabIndex = 6
         '
+        'btnPRDTsql
+        '
+        Me.btnPRDTsql.Location = New System.Drawing.Point(39, 207)
+        Me.btnPRDTsql.Name = "btnPRDTsql"
+        Me.btnPRDTsql.Size = New System.Drawing.Size(142, 23)
+        Me.btnPRDTsql.TabIndex = 7
+        Me.btnPRDTsql.Text = "Migrat PRDT to SQL"
+        Me.btnPRDTsql.UseVisualStyleBackColor = True
+        '
         'autoFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(616, 293)
+        Me.Controls.Add(Me.btnPRDTsql)
         Me.Controls.Add(Me.lblErr)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtBackup)
@@ -135,4 +146,5 @@ Partial Class autoFrm
     Friend WithEvents Label3 As Label
     Friend WithEvents txtBackup As TextBox
     Friend WithEvents lblErr As Label
+    Friend WithEvents btnPRDTsql As Button
 End Class

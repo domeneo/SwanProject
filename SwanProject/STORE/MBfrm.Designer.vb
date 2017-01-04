@@ -1,7 +1,7 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class MBfrm
     Inherits System.Windows.Forms.Form
-
+    ' Inherits MetroFramework.Forms.MetroForm
     'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
@@ -392,7 +392,7 @@ Partial Class MBfrm
         Me.lblslip.AutoSize = True
         Me.lblslip.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.lblslip.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblslip.Location = New System.Drawing.Point(11, 7)
+        Me.lblslip.Location = New System.Drawing.Point(11, 12)
         Me.lblslip.Name = "lblslip"
         Me.lblslip.Size = New System.Drawing.Size(56, 31)
         Me.lblslip.TabIndex = 37
@@ -736,7 +736,6 @@ Partial Class MBfrm
         Me.Controls.Add(Me.txtLOT)
         Me.Controls.Add(Me.Label1)
         Me.Name = "MBfrm"
-        Me.Text = "MB"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.GV1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GBPrdt.ResumeLayout(False)

@@ -323,10 +323,11 @@ Public Class POfrm
 
     Private Sub txtPrdt_LostFocus(sender As Object, e As EventArgs) Handles txtPrdt.LostFocus
         If txtPrdt.Text.Trim <> "" Then
-            Dim th As New Thread(AddressOf GetPrdt)
+            GetPrdt()
+            'Dim th As New Thread(AddressOf GetPrdt)
 
-            th.IsBackground = True
-            th.Start()
+            'th.IsBackground = True
+            'th.Start()
         End If
     End Sub
 
@@ -747,10 +748,11 @@ Public Class POfrm
         ' txtPsTock.Enabled = True
 
         If txtPrdt.Text.Trim <> "" Then
-            Dim th As New Thread(AddressOf GetPrdt)
+            GetPrdt()
+            'Dim th As New Thread(AddressOf GetPrdt)
 
-            th.IsBackground = True
-            th.Start()
+            'th.IsBackground = True
+            'th.Start()
         End If
 
 

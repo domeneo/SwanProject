@@ -984,13 +984,7 @@ Public Class MAfrm
         txtMPage.SelectAll()
     End Sub
 
-    Private Sub txtPrdt_TextChanged(sender As Object, e As EventArgs) Handles txtPrdt.TextChanged
 
-    End Sub
-
-    Private Sub txtLOT_TextChanged(sender As Object, e As EventArgs) Handles txtLOT.TextChanged
-
-    End Sub
 
     Private Sub BtnSK_Click(sender As Object, e As EventArgs) Handles BtnSK.Click
 
