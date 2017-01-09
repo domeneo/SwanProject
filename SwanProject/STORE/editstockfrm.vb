@@ -77,6 +77,7 @@ Public Class editstockfrm
 
     End Sub
     Private Sub MAfrm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.WindowState = FormWindowState.Maximized
         CheckForIllegalCrossThreadCalls = False
         dtSQL.conn = conn
         dtACC.conn = connAcc
@@ -84,7 +85,7 @@ Public Class editstockfrm
         mc.OutConnAcc = connAcc
         mc.OutDB = "SQL"
 
-
+        LoadEditList()
         AddSendtab(Me)
         RemoveHandler txtPrdt.KeyDown, AddressOf TextBox_Keydown
         RemoveHandler txtHand.KeyDown, AddressOf TextBox_Keydown
@@ -269,9 +270,9 @@ Public Class editstockfrm
             End If
 
 
-            If txtEditcode.Text.Trim = "" Then
+            If txtEditcode.Text.Trim = "" Or txtEditNote.Text.Trim = "" Then
 
-                MsgBox("กรุณารันหมายเลขการแก้ไข")
+                MsgBox("กรุณาใส่รายละเอียดการแก้ไข")
                 Exit Sub
             End If
             saveedit()
@@ -310,7 +311,7 @@ Public Class editstockfrm
             '  LogC.SaveLOG(DBCB.Text, txtCode.Text, "UPDATE", LOGCLS.DBTYPE.ACCESS)
             LogC.SaveLOG(DBCB.Text, txtCode.Text, "UPDATE", LOGCLS.DBTYPE.SQLSERVER)
 
-
+            LoadEditList()
             txtCode.Focus()
             MsgBox("บันทึกสำเร็จ", MsgBoxStyle.OkOnly, "Success")
             SwitchMode("IDLE")
@@ -601,8 +602,13 @@ Public Class editstockfrm
 
         AutocomLOT()
         AutocomPRDT()
-    End Sub
 
+
+    End Sub
+    Sub LoadEditList()
+
+        dgvEdit.DataSource = dtSQL.QryDT("select [E_ID],[E_REQ],[E_DETAIL],[E_EDITOR] from STOCK_EDIT order by E_ID DESC", Project.swanSQL)
+    End Sub
     Private Sub txtPrdt_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPrdt.KeyDown
         If e.Shift And e.KeyCode = Keys.Enter Then
             txtHand.Focus()
@@ -769,14 +775,27 @@ Public Class editstockfrm
         txtedtior.Text = Project.User
         Dim sqlstr As String
 
-        sqlstr = " Update stock_edit SET E_REQ='" & txtEditreq.Text & "',E_DETAIL='" & txtEditNote.Text & "',E_EDITOR='" & txtedtior.Text & "',E_TIME=getdate() WHERE e_id='" & txtEditcode.Text & "'"
+        sqlstr = " Update stock_edit SET E_REQ='" & txtEditreq.Text & "',E_DETAIL='" & txtEditNote.Text & "',E_EDITOR='" & txtedtior.Text & "',E_TIME=getdate(),E_DB='" & DBCB.Text & "' WHERE e_id='" & txtEditcode.Text & "'"
 
         sqlstr += "  If @@ROWCOUNT = 0 "
-        sqlstr += "   INSERT INTO stock_edit (e_id,E_REQ,E_DETAIL,E_EDITOR,E_TIME) VALUES ('" & txtEditcode.Text & "','" & txtEditreq.Text & "','" & txtEditNote.Text & "','" & txtedtior.Text & "',getdate()) "
+        sqlstr += "   INSERT INTO stock_edit (e_id,E_REQ,E_DETAIL,E_EDITOR,E_TIME,E_DB) VALUES ('" & txtEditcode.Text & "','" & txtEditreq.Text & "','" & txtEditNote.Text & "','" & txtedtior.Text & "',getdate(),'" & DBCB.Text & "') "
         dtSQL.RunCommand(sqlstr)
     End Sub
 
     Private Sub btnget_editcode_Click(sender As Object, e As EventArgs) Handles btnget_editcode.Click
         getedit_detail()
+    End Sub
+
+
+    Private Sub dgvEdit_DoubleClick(sender As Object, e As EventArgs) Handles dgvEdit.DoubleClick
+        If dgvEdit.SelectedRows.Count = 0 Then Exit Sub
+        btnnew_editcode.PerformClick()
+        '  txtEditcode.Text = dgvEdit.SelectedRows(0).Cells(0).Value
+        txtEditreq.Text = dgvEdit.SelectedRows(0).Cells(1).Value
+        txtEditNote.Text = dgvEdit.SelectedRows(0).Cells(2).Value
+    End Sub
+
+    Private Sub dgvEdit_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEdit.CellContentClick
+
     End Sub
 End Class

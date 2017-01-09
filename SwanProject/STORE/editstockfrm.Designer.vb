@@ -45,6 +45,18 @@ Partial Class editstockfrm
         Me.LBLSTATUS = New System.Windows.Forms.Label()
         Me.GetBtn = New System.Windows.Forms.Button()
         Me.GV1 = New System.Windows.Forms.DataGridView()
+        Me.PRDT = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.QTY = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.REA = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.COND = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DEPT = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SUP = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PRICE = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.INV = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BAL = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.KG = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MONTH = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.S_NOTE = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.addPrdtbtn = New System.Windows.Forms.Button()
         Me.lblslip = New System.Windows.Forms.Label()
         Me.btnCancel = New System.Windows.Forms.Button()
@@ -87,21 +99,14 @@ Partial Class editstockfrm
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtstime = New System.Windows.Forms.TextBox()
         Me.Label23 = New System.Windows.Forms.Label()
-        Me.PRDT = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.QTY = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.REA = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.COND = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DEPT = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SUP = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PRICE = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.INV = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.BAL = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.KG = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MONTH = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.S_NOTE = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.dgvEdit = New System.Windows.Forms.DataGridView()
+        Me.Label26 = New System.Windows.Forms.Label()
         CType(Me.GV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GBPrdt.SuspendLayout()
         Me.GBLOT.SuspendLayout()
+        CType(Me.dgvEdit, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -269,6 +274,7 @@ Partial Class editstockfrm
         '
         'DelBtn
         '
+        Me.DelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.DelBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.DelBtn.Location = New System.Drawing.Point(583, 124)
         Me.DelBtn.Name = "DelBtn"
@@ -288,6 +294,7 @@ Partial Class editstockfrm
         '
         'SaveBtn
         '
+        Me.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.SaveBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.SaveBtn.Location = New System.Drawing.Point(583, 17)
         Me.SaveBtn.Name = "SaveBtn"
@@ -307,6 +314,7 @@ Partial Class editstockfrm
         '
         'GetBtn
         '
+        Me.GetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GetBtn.Location = New System.Drawing.Point(144, 43)
         Me.GetBtn.Name = "GetBtn"
         Me.GetBtn.Size = New System.Drawing.Size(66, 24)
@@ -321,11 +329,85 @@ Partial Class editstockfrm
         Me.GV1.Location = New System.Drawing.Point(17, 184)
         Me.GV1.Name = "GV1"
         Me.GV1.ReadOnly = True
-        Me.GV1.Size = New System.Drawing.Size(1164, 301)
+        Me.GV1.Size = New System.Drawing.Size(880, 301)
         Me.GV1.TabIndex = 30
+        '
+        'PRDT
+        '
+        Me.PRDT.HeaderText = "PRDT"
+        Me.PRDT.Name = "PRDT"
+        Me.PRDT.ReadOnly = True
+        '
+        'QTY
+        '
+        Me.QTY.HeaderText = "QTY"
+        Me.QTY.Name = "QTY"
+        Me.QTY.ReadOnly = True
+        '
+        'REA
+        '
+        Me.REA.HeaderText = "REA"
+        Me.REA.Name = "REA"
+        Me.REA.ReadOnly = True
+        '
+        'COND
+        '
+        Me.COND.HeaderText = "COND"
+        Me.COND.Name = "COND"
+        Me.COND.ReadOnly = True
+        '
+        'DEPT
+        '
+        Me.DEPT.HeaderText = "DEPT"
+        Me.DEPT.Name = "DEPT"
+        Me.DEPT.ReadOnly = True
+        '
+        'SUP
+        '
+        Me.SUP.HeaderText = "SUP"
+        Me.SUP.Name = "SUP"
+        Me.SUP.ReadOnly = True
+        '
+        'PRICE
+        '
+        Me.PRICE.HeaderText = "PRICE"
+        Me.PRICE.Name = "PRICE"
+        Me.PRICE.ReadOnly = True
+        '
+        'INV
+        '
+        Me.INV.HeaderText = "INV"
+        Me.INV.Name = "INV"
+        Me.INV.ReadOnly = True
+        '
+        'BAL
+        '
+        Me.BAL.HeaderText = "BAL"
+        Me.BAL.Name = "BAL"
+        Me.BAL.ReadOnly = True
+        '
+        'KG
+        '
+        Me.KG.HeaderText = "KG"
+        Me.KG.Name = "KG"
+        Me.KG.ReadOnly = True
+        '
+        'MONTH
+        '
+        Me.MONTH.HeaderText = "MONTH"
+        Me.MONTH.Name = "MONTH"
+        Me.MONTH.ReadOnly = True
+        '
+        'S_NOTE
+        '
+        Me.S_NOTE.HeaderText = "NOTE"
+        Me.S_NOTE.Name = "S_NOTE"
+        Me.S_NOTE.ReadOnly = True
+        Me.S_NOTE.Width = 150
         '
         'addPrdtbtn
         '
+        Me.addPrdtbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.addPrdtbtn.Location = New System.Drawing.Point(561, 491)
         Me.addPrdtbtn.Name = "addPrdtbtn"
         Me.addPrdtbtn.Size = New System.Drawing.Size(75, 23)
@@ -346,6 +428,7 @@ Partial Class editstockfrm
         '
         'btnCancel
         '
+        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.btnCancel.Location = New System.Drawing.Point(583, 71)
         Me.btnCancel.Name = "btnCancel"
@@ -356,6 +439,7 @@ Partial Class editstockfrm
         '
         'DelPrdtbtn
         '
+        Me.DelPrdtbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.DelPrdtbtn.Location = New System.Drawing.Point(561, 520)
         Me.DelPrdtbtn.Name = "DelPrdtbtn"
         Me.DelPrdtbtn.Size = New System.Drawing.Size(75, 23)
@@ -602,7 +686,8 @@ Partial Class editstockfrm
         '
         'btnnew_editcode
         '
-        Me.btnnew_editcode.Location = New System.Drawing.Point(843, 7)
+        Me.btnnew_editcode.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnnew_editcode.Location = New System.Drawing.Point(871, 9)
         Me.btnnew_editcode.Name = "btnnew_editcode"
         Me.btnnew_editcode.Size = New System.Drawing.Size(46, 24)
         Me.btnnew_editcode.TabIndex = 58
@@ -611,7 +696,8 @@ Partial Class editstockfrm
         '
         'btnget_editcode
         '
-        Me.btnget_editcode.Location = New System.Drawing.Point(890, 7)
+        Me.btnget_editcode.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnget_editcode.Location = New System.Drawing.Point(918, 9)
         Me.btnget_editcode.Name = "btnget_editcode"
         Me.btnget_editcode.Size = New System.Drawing.Size(38, 24)
         Me.btnget_editcode.TabIndex = 57
@@ -755,78 +841,48 @@ Partial Class editstockfrm
         Me.Label23.TabIndex = 64
         Me.Label23.Text = "Time:"
         '
-        'PRDT
+        'Label24
         '
-        Me.PRDT.HeaderText = "PRDT"
-        Me.PRDT.Name = "PRDT"
-        Me.PRDT.ReadOnly = True
+        Me.Label24.AutoSize = True
+        Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label24.ForeColor = System.Drawing.Color.Red
+        Me.Label24.Location = New System.Drawing.Point(898, 79)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(21, 25)
+        Me.Label24.TabIndex = 65
+        Me.Label24.Text = "*"
         '
-        'QTY
+        'Label25
         '
-        Me.QTY.HeaderText = "QTY"
-        Me.QTY.Name = "QTY"
-        Me.QTY.ReadOnly = True
+        Me.Label25.AutoSize = True
+        Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label25.ForeColor = System.Drawing.Color.Red
+        Me.Label25.Location = New System.Drawing.Point(844, 9)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(21, 25)
+        Me.Label25.TabIndex = 66
+        Me.Label25.Text = "*"
         '
-        'REA
+        'dgvEdit
         '
-        Me.REA.HeaderText = "REA"
-        Me.REA.Name = "REA"
-        Me.REA.ReadOnly = True
+        Me.dgvEdit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.dgvEdit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvEdit.Location = New System.Drawing.Point(925, 37)
+        Me.dgvEdit.Name = "dgvEdit"
+        Me.dgvEdit.RowHeadersVisible = False
+        Me.dgvEdit.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvEdit.Size = New System.Drawing.Size(256, 617)
+        Me.dgvEdit.TabIndex = 67
         '
-        'COND
+        'Label26
         '
-        Me.COND.HeaderText = "COND"
-        Me.COND.Name = "COND"
-        Me.COND.ReadOnly = True
-        '
-        'DEPT
-        '
-        Me.DEPT.HeaderText = "DEPT"
-        Me.DEPT.Name = "DEPT"
-        Me.DEPT.ReadOnly = True
-        '
-        'SUP
-        '
-        Me.SUP.HeaderText = "SUP"
-        Me.SUP.Name = "SUP"
-        Me.SUP.ReadOnly = True
-        '
-        'PRICE
-        '
-        Me.PRICE.HeaderText = "PRICE"
-        Me.PRICE.Name = "PRICE"
-        Me.PRICE.ReadOnly = True
-        '
-        'INV
-        '
-        Me.INV.HeaderText = "INV"
-        Me.INV.Name = "INV"
-        Me.INV.ReadOnly = True
-        '
-        'BAL
-        '
-        Me.BAL.HeaderText = "BAL"
-        Me.BAL.Name = "BAL"
-        Me.BAL.ReadOnly = True
-        '
-        'KG
-        '
-        Me.KG.HeaderText = "KG"
-        Me.KG.Name = "KG"
-        Me.KG.ReadOnly = True
-        '
-        'MONTH
-        '
-        Me.MONTH.HeaderText = "MONTH"
-        Me.MONTH.Name = "MONTH"
-        Me.MONTH.ReadOnly = True
-        '
-        'S_NOTE
-        '
-        Me.S_NOTE.HeaderText = "NOTE"
-        Me.S_NOTE.Name = "S_NOTE"
-        Me.S_NOTE.ReadOnly = True
-        Me.S_NOTE.Width = 150
+        Me.Label26.AutoSize = True
+        Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label26.Location = New System.Drawing.Point(962, 14)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(80, 16)
+        Me.Label26.TabIndex = 68
+        Me.Label26.Text = "Edit Code:"
         '
         'editstockfrm
         '
@@ -834,6 +890,10 @@ Partial Class editstockfrm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1193, 658)
+        Me.Controls.Add(Me.Label26)
+        Me.Controls.Add(Me.dgvEdit)
+        Me.Controls.Add(Me.Label25)
+        Me.Controls.Add(Me.Label24)
         Me.Controls.Add(Me.Label23)
         Me.Controls.Add(Me.txtstime)
         Me.Controls.Add(Me.txtINV)
@@ -894,6 +954,7 @@ Partial Class editstockfrm
         Me.GBPrdt.PerformLayout()
         Me.GBLOT.ResumeLayout(False)
         Me.GBLOT.PerformLayout()
+        CType(Me.dgvEdit, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -975,4 +1036,8 @@ Partial Class editstockfrm
     Friend WithEvents KG As DataGridViewTextBoxColumn
     Friend WithEvents MONTH As DataGridViewTextBoxColumn
     Friend WithEvents S_NOTE As DataGridViewTextBoxColumn
+    Friend WithEvents Label24 As Label
+    Friend WithEvents Label25 As Label
+    Friend WithEvents dgvEdit As DataGridView
+    Friend WithEvents Label26 As Label
 End Class

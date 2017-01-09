@@ -175,6 +175,9 @@ Public Class MDIParent1
         If lblGroup.Text.ToUpper = "STORE" Or lblGroup.Text.ToUpper = "ADMIN" Then
             STOREmnu.Visible = True
         End If
+        If lblGroup.Text.ToUpper.Contains("PRODUCTION") Or lblGroup.Text.ToUpper = "STORE" Or lblGroup.Text.ToUpper = "ADMIN" Then
+            AdminMnu.Visible = True
+        End If
         If lblGroup.Text.ToUpper = "PRODUCTION" Or lblGroup.Text.ToUpper = "ADMIN" Then
             LOTinputMNU.Visible = True
         End If

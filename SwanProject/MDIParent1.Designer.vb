@@ -45,8 +45,6 @@ Partial Class MDIParent1
         Me.ViewMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolBarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusBarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolsMenu = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.WindowsMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewWindowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CascadeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -67,6 +65,14 @@ Partial Class MDIParent1
         Me.UPDATEBACKLOGToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UPDATEODFILEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UPDATEALLToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolsMenu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DumptoSQLToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PRDTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BOMToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LOTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ALLToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EMPlistToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
@@ -109,21 +115,15 @@ Partial Class MDIParent1
         Me.HrMnu = New System.Windows.Forms.ToolStripDropDownButton()
         Me.PatrolMnu = New System.Windows.Forms.ToolStripMenuItem()
         Me.TimeAttToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EMPLOYEEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PrintQAbtn = New System.Windows.Forms.ToolStripDropDownButton()
         Me.PrintQAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SKapprovalBtn = New System.Windows.Forms.ToolStripButton()
         Me.SupplyUseBTN = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
+        Me.AdminMnu = New System.Windows.Forms.ToolStripDropDownButton()
         Me.EDITSTOCKToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AutosystemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.logoutbtn = New System.Windows.Forms.ToolStripButton()
-        Me.DumptoSQLToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PRDTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BOMToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LOTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ALLToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EMPLOYEEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EMPlistToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
@@ -250,19 +250,6 @@ Partial Class MDIParent1
         Me.StatusBarToolStripMenuItem.Name = "StatusBarToolStripMenuItem"
         Me.StatusBarToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
         Me.StatusBarToolStripMenuItem.Text = "&Status Bar"
-        '
-        'ToolsMenu
-        '
-        Me.ToolsMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OptionsToolStripMenuItem, Me.DumptoSQLToolStripMenuItem, Me.EMPlistToolStripMenuItem})
-        Me.ToolsMenu.Name = "ToolsMenu"
-        Me.ToolsMenu.Size = New System.Drawing.Size(47, 20)
-        Me.ToolsMenu.Text = "&Tools"
-        '
-        'OptionsToolStripMenuItem
-        '
-        Me.OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem"
-        Me.OptionsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.OptionsToolStripMenuItem.Text = "&Options"
         '
         'WindowsMenu
         '
@@ -391,6 +378,56 @@ Partial Class MDIParent1
         Me.UPDATEALLToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
         Me.UPDATEALLToolStripMenuItem.Text = "UPDATE ALL"
         '
+        'ToolsMenu
+        '
+        Me.ToolsMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OptionsToolStripMenuItem, Me.DumptoSQLToolStripMenuItem, Me.EMPlistToolStripMenuItem})
+        Me.ToolsMenu.Name = "ToolsMenu"
+        Me.ToolsMenu.Size = New System.Drawing.Size(47, 20)
+        Me.ToolsMenu.Text = "&Tools"
+        '
+        'OptionsToolStripMenuItem
+        '
+        Me.OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem"
+        Me.OptionsToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.OptionsToolStripMenuItem.Text = "&Options"
+        '
+        'DumptoSQLToolStripMenuItem
+        '
+        Me.DumptoSQLToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PRDTToolStripMenuItem, Me.BOMToolStripMenuItem, Me.LOTToolStripMenuItem, Me.ALLToolStripMenuItem})
+        Me.DumptoSQLToolStripMenuItem.Name = "DumptoSQLToolStripMenuItem"
+        Me.DumptoSQLToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.DumptoSQLToolStripMenuItem.Text = "DumptoSQL"
+        '
+        'PRDTToolStripMenuItem
+        '
+        Me.PRDTToolStripMenuItem.Name = "PRDTToolStripMenuItem"
+        Me.PRDTToolStripMenuItem.Size = New System.Drawing.Size(102, 22)
+        Me.PRDTToolStripMenuItem.Text = "PRDT"
+        '
+        'BOMToolStripMenuItem
+        '
+        Me.BOMToolStripMenuItem.Name = "BOMToolStripMenuItem"
+        Me.BOMToolStripMenuItem.Size = New System.Drawing.Size(102, 22)
+        Me.BOMToolStripMenuItem.Text = "BOM"
+        '
+        'LOTToolStripMenuItem
+        '
+        Me.LOTToolStripMenuItem.Name = "LOTToolStripMenuItem"
+        Me.LOTToolStripMenuItem.Size = New System.Drawing.Size(102, 22)
+        Me.LOTToolStripMenuItem.Text = "LOT"
+        '
+        'ALLToolStripMenuItem
+        '
+        Me.ALLToolStripMenuItem.Name = "ALLToolStripMenuItem"
+        Me.ALLToolStripMenuItem.Size = New System.Drawing.Size(102, 22)
+        Me.ALLToolStripMenuItem.Text = "ALL"
+        '
+        'EMPlistToolStripMenuItem
+        '
+        Me.EMPlistToolStripMenuItem.Name = "EMPlistToolStripMenuItem"
+        Me.EMPlistToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.EMPlistToolStripMenuItem.Text = "ข้อมูลพนักงาน"
+        '
         'StatusStrip
         '
         Me.StatusStrip.BackColor = System.Drawing.Color.White
@@ -453,7 +490,7 @@ Partial Class MDIParent1
         '
         Me.ToolStrip1.BackColor = System.Drawing.Color.White
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSstock, Me.AccountBtn, Me.STOREmnu, Me.PrdtMnu, Me.ProDmnu, Me.ToolStripDropDownButton2, Me.ToolStripDropDownButton3, Me.HrMnu, Me.PrintQAbtn, Me.SKapprovalBtn, Me.SupplyUseBTN, Me.ToolStripDropDownButton1, Me.logoutbtn})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSstock, Me.AccountBtn, Me.STOREmnu, Me.PrdtMnu, Me.ProDmnu, Me.ToolStripDropDownButton2, Me.ToolStripDropDownButton3, Me.HrMnu, Me.PrintQAbtn, Me.SKapprovalBtn, Me.SupplyUseBTN, Me.AdminMnu, Me.logoutbtn})
         Me.ToolStrip1.Location = New System.Drawing.Point(20, 84)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(890, 25)
@@ -674,14 +711,20 @@ Partial Class MDIParent1
         'PatrolMnu
         '
         Me.PatrolMnu.Name = "PatrolMnu"
-        Me.PatrolMnu.Size = New System.Drawing.Size(152, 22)
+        Me.PatrolMnu.Size = New System.Drawing.Size(141, 22)
         Me.PatrolMnu.Text = "Patrol Check"
         '
         'TimeAttToolStripMenuItem
         '
         Me.TimeAttToolStripMenuItem.Name = "TimeAttToolStripMenuItem"
-        Me.TimeAttToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.TimeAttToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
         Me.TimeAttToolStripMenuItem.Text = "TimeAtt"
+        '
+        'EMPLOYEEToolStripMenuItem
+        '
+        Me.EMPLOYEEToolStripMenuItem.Name = "EMPLOYEEToolStripMenuItem"
+        Me.EMPLOYEEToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
+        Me.EMPLOYEEToolStripMenuItem.Text = "EMPLOYEE"
         '
         'PrintQAbtn
         '
@@ -717,26 +760,27 @@ Partial Class MDIParent1
         Me.SupplyUseBTN.Size = New System.Drawing.Size(66, 22)
         Me.SupplyUseBTN.Text = "SupplyUse"
         '
-        'ToolStripDropDownButton1
+        'AdminMnu
         '
-        Me.ToolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EDITSTOCKToolStripMenuItem, Me.AutosystemToolStripMenuItem})
-        Me.ToolStripDropDownButton1.Image = CType(resources.GetObject("ToolStripDropDownButton1.Image"), System.Drawing.Image)
-        Me.ToolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripDropDownButton1.Name = "ToolStripDropDownButton1"
-        Me.ToolStripDropDownButton1.Size = New System.Drawing.Size(59, 22)
-        Me.ToolStripDropDownButton1.Text = "ADMIN"
+        Me.AdminMnu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.AdminMnu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EDITSTOCKToolStripMenuItem, Me.AutosystemToolStripMenuItem})
+        Me.AdminMnu.Image = CType(resources.GetObject("AdminMnu.Image"), System.Drawing.Image)
+        Me.AdminMnu.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.AdminMnu.Name = "AdminMnu"
+        Me.AdminMnu.Size = New System.Drawing.Size(59, 22)
+        Me.AdminMnu.Text = "ADMIN"
+        Me.AdminMnu.Visible = False
         '
         'EDITSTOCKToolStripMenuItem
         '
         Me.EDITSTOCKToolStripMenuItem.Name = "EDITSTOCKToolStripMenuItem"
-        Me.EDITSTOCKToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
+        Me.EDITSTOCKToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.EDITSTOCKToolStripMenuItem.Text = "EDIT STOCK"
         '
         'AutosystemToolStripMenuItem
         '
         Me.AutosystemToolStripMenuItem.Name = "AutosystemToolStripMenuItem"
-        Me.AutosystemToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
+        Me.AutosystemToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.AutosystemToolStripMenuItem.Text = "Autosystem"
         '
         'logoutbtn
@@ -747,49 +791,6 @@ Partial Class MDIParent1
         Me.logoutbtn.Name = "logoutbtn"
         Me.logoutbtn.Size = New System.Drawing.Size(51, 22)
         Me.logoutbtn.Text = "LogOut"
-        '
-        'DumptoSQLToolStripMenuItem
-        '
-        Me.DumptoSQLToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PRDTToolStripMenuItem, Me.BOMToolStripMenuItem, Me.LOTToolStripMenuItem, Me.ALLToolStripMenuItem})
-        Me.DumptoSQLToolStripMenuItem.Name = "DumptoSQLToolStripMenuItem"
-        Me.DumptoSQLToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.DumptoSQLToolStripMenuItem.Text = "DumptoSQL"
-        '
-        'PRDTToolStripMenuItem
-        '
-        Me.PRDTToolStripMenuItem.Name = "PRDTToolStripMenuItem"
-        Me.PRDTToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.PRDTToolStripMenuItem.Text = "PRDT"
-        '
-        'BOMToolStripMenuItem
-        '
-        Me.BOMToolStripMenuItem.Name = "BOMToolStripMenuItem"
-        Me.BOMToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.BOMToolStripMenuItem.Text = "BOM"
-        '
-        'LOTToolStripMenuItem
-        '
-        Me.LOTToolStripMenuItem.Name = "LOTToolStripMenuItem"
-        Me.LOTToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.LOTToolStripMenuItem.Text = "LOT"
-        '
-        'ALLToolStripMenuItem
-        '
-        Me.ALLToolStripMenuItem.Name = "ALLToolStripMenuItem"
-        Me.ALLToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.ALLToolStripMenuItem.Text = "ALL"
-        '
-        'EMPLOYEEToolStripMenuItem
-        '
-        Me.EMPLOYEEToolStripMenuItem.Name = "EMPLOYEEToolStripMenuItem"
-        Me.EMPLOYEEToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.EMPLOYEEToolStripMenuItem.Text = "EMPLOYEE"
-        '
-        'EMPlistToolStripMenuItem
-        '
-        Me.EMPlistToolStripMenuItem.Name = "EMPlistToolStripMenuItem"
-        Me.EMPlistToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.EMPlistToolStripMenuItem.Text = "ข้อมูลพนักงาน"
         '
         'MDIParent1
         '
@@ -874,7 +875,7 @@ Partial Class MDIParent1
     Friend WithEvents lblGroup As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents HrMnu As System.Windows.Forms.ToolStripDropDownButton
     Friend WithEvents PatrolMnu As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripDropDownButton1 As ToolStripDropDownButton
+    Friend WithEvents AdminMnu As ToolStripDropDownButton
     Friend WithEvents EDITSTOCKToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents logoutbtn As ToolStripButton
     Friend WithEvents WIPAddNOTEToolStripMenuItem As ToolStripMenuItem
