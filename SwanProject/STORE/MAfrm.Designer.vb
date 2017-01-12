@@ -125,7 +125,6 @@ Partial Class MAfrm
         '
         'txtDate
         '
-        Me.txtDate.Enabled = False
         Me.txtDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.txtDate.Location = New System.Drawing.Point(65, 100)
         Me.txtDate.MaxLength = 8

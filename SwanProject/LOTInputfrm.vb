@@ -441,19 +441,28 @@ Public Class LOTInputfrm
                 End If
             Next
 
-            If check = False Then
-                MsgBox("ของไม่พอเปิด LOT")
-                TXTCOMDATE.Focus()
-
-
-            Else
-                TXTAQTY.Focus()
-            End If
-
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
             frmp.Close()
         End Try
+
+        If check = False Then
+                MsgBox("ของไม่พอเปิด LOT")
+                TXTCOMDATE.Focus()
+                TXTCOMDATE.Focus()
+
+
+            Else
+
+            txtQTY.Focus()
+            txtQTY.Focus()
+        End If
+
+
+    End Sub
+
+    Private Sub txtQTY_Layout(sender As Object, e As LayoutEventArgs) Handles txtQTY.Layout
+
     End Sub
 End Class

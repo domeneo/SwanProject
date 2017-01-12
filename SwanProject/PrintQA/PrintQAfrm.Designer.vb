@@ -35,6 +35,8 @@ Partial Class PrintQAfrm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtINV = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -173,12 +175,31 @@ Partial Class PrintQAfrm
         Me.Label3.TabIndex = 26
         Me.Label3.Text = "และตั้งDefault Printer ไว้"
         '
+        'txtINV
+        '
+        Me.txtINV.Location = New System.Drawing.Point(98, 252)
+        Me.txtINV.Name = "txtINV"
+        Me.txtINV.Size = New System.Drawing.Size(100, 20)
+        Me.txtINV.TabIndex = 27
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label5.Location = New System.Drawing.Point(9, 255)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(83, 13)
+        Me.Label5.TabIndex = 28
+        Me.Label5.Text = "INVOICE NO."
+        '
         'PrintQAfrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(559, 404)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.txtINV)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -211,4 +232,6 @@ Partial Class PrintQAfrm
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents txtINV As TextBox
+    Friend WithEvents Label5 As Label
 End Class

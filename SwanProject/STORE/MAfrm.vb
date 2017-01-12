@@ -286,7 +286,7 @@ Public Class MAfrm
 
                 ElseIf txtRea.Text = "S" Or txtRea.Text = "E" Then
 
-                    SQLstr = "update  MAEXP set MA_RQTY=MA_RQTY + " & dr.Cells("QTY").Value & " where MA_PRDT like '" & dr.Cells("PRDT").Value & "' and  replace(ma_code,'/','') like '" & txtLOT.Text & "'"
+                    SQLstr = "update  MAEXP set MA_RQTY=MA_RQTY + " & dr.Cells("QTY").Value & " where MA_PRDT like '" & dr.Cells("PRDT").Value & "' and ma_seq = '" & txtMPage.Text & "' and  replace(ma_code,'/','') like '" & txtLOT.Text & "'"
 
                     Dim lot As String = txtLOT.Text
 
@@ -294,7 +294,7 @@ Public Class MAfrm
                         lot = lot.Substring(0, 2) + "/" + lot.Substring(2, lot.Length - 2)
 
                     End If
-                    SQLstr = "update  MAEXP set MA_RQTY=MA_RQTY + " & dr.Cells("QTY").Value & " where MA_PRDT like '" & dr.Cells("PRDT").Value & "' and  ma_code like '" & lot & "'"
+                    SQLstr = "update  MAEXP set MA_RQTY=MA_RQTY + " & dr.Cells("QTY").Value & " where MA_PRDT like '" & dr.Cells("PRDT").Value & "' and ma_seq = '" & txtMPage.Text & "' and  ma_code like '" & lot & "'"
 
                     '  dtSQL.RunCommand(SQLstr)
                     dtACC.RunCommand(SQLstr, Project.md7_boi)

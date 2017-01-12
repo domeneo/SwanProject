@@ -31,7 +31,7 @@ Public Class PrintQAfrm
     " FROM (ODFILE_" & DBCB.Text & " LEFT JOIN PRDT_" & DBCB.Text & " ON ODFILE_" & DBCB.Text & ".WE_PRDT = PRDT_" & DBCB.Text & ".P_PRDT) LEFT JOIN SUPMAST_" & DBCB.Text & " ON ODFILE_" & DBCB.Text & ".WE_SUP = SUPMAST_" & DBCB.Text & ".S_SUP"
             ElseIf RB_C.Checked Then
                 sqlstr = "SELECT 'D' as we_rea, C_LOT as WE_CODE, c_sup as WE_SUP, S_NAME, P_PLACE,'' as WE_USE,c_date as  WE_PDATE, P_ENAME, P_TNAME, P_SPEC, P_UNIT,'' as  WE_QTY,'' as  WE_DQTY, c_qty AS useQTY, c_prdt as WE_PRDT" +
-    " FROM (claim LEFT JOIN PRDT_" & DBCB.Text & " ON claim.c_PRDT = PRDT_" & DBCB.Text & ".P_PRDT) LEFT JOIN SUPMAST_" & DBCB.Text & " ON claim.c_sup = SUPMAST_BOI.S_SUP"
+    " FROM (claim LEFT JOIN PRDT_" & DBCB.Text & " ON claim.c_PRDT = PRDT_" & DBCB.Text & ".P_PRDT) LEFT JOIN SUPMAST_" & DBCB.Text & " ON claim.c_sup = SUPMAST_" & DBCB.Text & ".S_SUP"
 
 
             End If
@@ -133,12 +133,18 @@ Reflection.BindingFlags.NonPublic).GetValue(ps))
                 '  rpt_M.PrintOptions.DissociatePageSizeAndPrinterPaperSize = True
                 rpt_M.PrintOptions.PaperSize = rawKind
                 rpt_M.PrintOptions.PrinterName = pss.PrinterName
-                rpt_M.PrintToPrinter(0, False, 0, 0)
+                rpt_M.PrintToPrinter(1, False, 0, 0)
                 ' rpt.RPTview.ReportSource = rpt_M
 
             Else
-                '  DirectCast(rpt_M.ReportDefinition.ReportObjects("txtSWAN1"), TextObject).Text = "SWAN" & DBCB.Text & "STOCK"
-                '  DirectCast(rpt_M.ReportDefinition.ReportObjects("txtSWAN2"), TextObject).Text = "SWAN" & DBCB.Text & "STOCK"
+                DirectCast(rpt_s.ReportDefinition.ReportObjects("txtSWAN1"), TextObject).Text = "SWAN" & DBCB.Text & "STOCK"
+                DirectCast(rpt_s.ReportDefinition.ReportObjects("txtSWAN2"), TextObject).Text = "SWAN" & DBCB.Text & "STOCK"
+
+                If txtINV.Enabled Then
+                    DirectCast(rpt_s.ReportDefinition.ReportObjects("txtINV"), TextObject).Text = "INV NO:" & txtINV.Text
+                Else
+                    DirectCast(rpt_s.ReportDefinition.ReportObjects("txtINV"), TextObject).Text = ""
+                End If
                 rpt_s.SetDataSource(dt)
 
                 rpt_s.PrintOptions.PaperSize = rawKind
@@ -165,6 +171,8 @@ Reflection.BindingFlags.NonPublic).GetValue(ps))
         End Try
     End Sub
     Sub ChangeBG()
+
+        txtINV.Enabled = RB_S.Checked
         If RB_M.Checked Then
             Me.BackColor = Color.White
             cbNotPrint.Visible = True
@@ -179,6 +187,7 @@ Reflection.BindingFlags.NonPublic).GetValue(ps))
 
     Private Sub RB_S_CheckedChanged(sender As Object, e As EventArgs) Handles RB_S.CheckedChanged
         ChangeBG()
+
     End Sub
 
     Private Sub btnPrintLabel_Click(sender As Object, e As EventArgs) Handles btnPrintLabel.Click
