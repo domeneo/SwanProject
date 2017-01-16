@@ -37,6 +37,7 @@ Partial Class PrintQAfrm
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtINV = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -54,7 +55,7 @@ Partial Class PrintQAfrm
         'PrintBtn
         '
         Me.PrintBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.PrintBtn.Location = New System.Drawing.Point(418, 12)
+        Me.PrintBtn.Location = New System.Drawing.Point(597, 12)
         Me.PrintBtn.Name = "PrintBtn"
         Me.PrintBtn.Size = New System.Drawing.Size(75, 48)
         Me.PrintBtn.TabIndex = 16
@@ -69,7 +70,7 @@ Partial Class PrintQAfrm
         Me.txtCode.Multiline = True
         Me.txtCode.Name = "txtCode"
         Me.txtCode.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtCode.Size = New System.Drawing.Size(117, 383)
+        Me.txtCode.Size = New System.Drawing.Size(255, 317)
         Me.txtCode.TabIndex = 17
         '
         'Label4
@@ -141,7 +142,7 @@ Partial Class PrintQAfrm
         'btnPrintLabel
         '
         Me.btnPrintLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.btnPrintLabel.Location = New System.Drawing.Point(418, 80)
+        Me.btnPrintLabel.Location = New System.Drawing.Point(597, 80)
         Me.btnPrintLabel.Name = "btnPrintLabel"
         Me.btnPrintLabel.Size = New System.Drawing.Size(75, 65)
         Me.btnPrintLabel.TabIndex = 23
@@ -151,7 +152,7 @@ Partial Class PrintQAfrm
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(440, 356)
+        Me.Label1.Location = New System.Drawing.Point(619, 356)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(103, 13)
         Me.Label1.TabIndex = 24
@@ -160,7 +161,7 @@ Partial Class PrintQAfrm
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(441, 369)
+        Me.Label2.Location = New System.Drawing.Point(620, 369)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(102, 13)
         Me.Label2.TabIndex = 25
@@ -169,7 +170,7 @@ Partial Class PrintQAfrm
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(441, 382)
+        Me.Label3.Location = New System.Drawing.Point(620, 382)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(120, 13)
         Me.Label3.TabIndex = 26
@@ -177,27 +178,37 @@ Partial Class PrintQAfrm
         '
         'txtINV
         '
-        Me.txtINV.Location = New System.Drawing.Point(98, 252)
+        Me.txtINV.Location = New System.Drawing.Point(101, 221)
         Me.txtINV.Name = "txtINV"
-        Me.txtINV.Size = New System.Drawing.Size(100, 20)
+        Me.txtINV.Size = New System.Drawing.Size(148, 20)
         Me.txtINV.TabIndex = 27
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label5.Location = New System.Drawing.Point(9, 255)
+        Me.Label5.Location = New System.Drawing.Point(12, 224)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(83, 13)
         Me.Label5.TabIndex = 28
         Me.Label5.Text = "INVOICE NO."
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(283, 332)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(184, 13)
+        Me.Label6.TabIndex = 29
+        Me.Label6.Text = "ตัวอย่างการใส่ INV 538493-11001123"
         '
         'PrintQAfrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(559, 404)
+        Me.ClientSize = New System.Drawing.Size(868, 404)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.txtINV)
         Me.Controls.Add(Me.Label3)
@@ -234,4 +245,5 @@ Partial Class PrintQAfrm
     Friend WithEvents Label3 As Label
     Friend WithEvents txtINV As TextBox
     Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
 End Class

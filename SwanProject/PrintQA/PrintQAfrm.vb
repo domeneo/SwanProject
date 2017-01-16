@@ -16,8 +16,14 @@ Public Class PrintQAfrm
             Dim rpt As New ReportFrm
             Dim rpt_M As New PrintQA_310
             Dim rpt_s As New PrintQA_S_310
-
+            Dim dtc As New dataACCcls
+            Dim dt As New DataTable
             Dim sqlstr As String
+
+
+
+            Dim inLotinv As String 
+            Dim inlot As String = ""
 
 
             If RB_M.Checked Then
@@ -27,7 +33,7 @@ Public Class PrintQAfrm
 
             ElseIf RB_S.Checked Then
 
-                sqlstr = "SELECT WE_REA, WE_CODE, WE_SUP, S_NAME, P_PLACE, WE_USE, WE_PDATE, P_ENAME, P_TNAME, P_SPEC, P_UNIT, WE_QTY, WE_DQTY, [WE_QTY]-[WE_DQTY] AS useQTY, WE_PRDT" +
+                sqlstr = "SELECT WE_REA, WE_CODE, WE_SUP, S_NAME, P_PLACE, WE_USE, WE_PDATE, P_ENAME, P_TNAME, P_SPEC, P_UNIT, WE_QTY, WE_DQTY, [WE_QTY]-[WE_DQTY] AS useQTY, WE_PRDT,WE_INV" +
     " FROM (ODFILE_" & DBCB.Text & " LEFT JOIN PRDT_" & DBCB.Text & " ON ODFILE_" & DBCB.Text & ".WE_PRDT = PRDT_" & DBCB.Text & ".P_PRDT) LEFT JOIN SUPMAST_" & DBCB.Text & " ON ODFILE_" & DBCB.Text & ".WE_SUP = SUPMAST_" & DBCB.Text & ".S_SUP"
             ElseIf RB_C.Checked Then
                 sqlstr = "SELECT 'D' as we_rea, C_LOT as WE_CODE, c_sup as WE_SUP, S_NAME, P_PLACE,'' as WE_USE,c_date as  WE_PDATE, P_ENAME, P_TNAME, P_SPEC, P_UNIT,'' as  WE_QTY,'' as  WE_DQTY, c_qty AS useQTY, c_prdt as WE_PRDT" +
@@ -50,7 +56,17 @@ Public Class PrintQAfrm
                 End If
 
 
-                Dim inLot As String = "'" & txtCode.Text.Trim.Replace(vbCrLf, "','") & "'"
+                inLotinv = "'" & txtCode.Text.Trim.Replace(vbCrLf, "','") & "'"
+                inlot = ""
+                For Each str As String In inLotinv.Split(",")
+                    inlot += "," & str.Split("-")(0)
+                    If str.Split("-")(0)(str.Split("-")(0).Length - 1) <> "'" Then
+                        inlot += "'"
+                    End If
+                Next
+                inlot = inlot.Substring(1)
+
+
 
 
                 If RB_M.Checked Then
@@ -61,10 +77,24 @@ Public Class PrintQAfrm
                     sqlstr += " where c_lot in (" & inLot & ")"
                 End If
 
+
+                Dim connstr As String
+                If DBCB.Text = "BOI" Then
+                    connstr = Project.md5_boi
+                Else
+                    connstr = Project.md5_tax
+                End If
+                Dim StrUpdate As String
+                For Each str As String In inLotinv.Split(",")
+                    If str.Contains("-") Then
+                        StrUpdate = "update ODFILE set WE_INV='" & str.Split("-")(1) & " where WE_CODE like " & str.Split("-")(0) & "'"
+                        dtc.RunCommand(StrUpdate, connstr)
+                    End If
+                Next
             End If
+            ' Exit Sub
             pgbfrm.PGB.Value += 1
-            Dim dtc As New dataACCcls
-            Dim dt As New DataTable
+
             dt = dtc.QryDT(sqlstr, Project.swanpath)
             'dtc.conn = conn
             'dtc.QryDT("select * from cer order by serial")
@@ -91,8 +121,8 @@ Public Class PrintQAfrm
                 End If
                 Dim dttemp As New DataTable
                 dttemp = dt.Clone
-                For Each str As String In txtCode.Text.Split(vbCrLf)
-                    For Each dr In dt.Select(LOTcol & " ='" & str.Replace(vbLf, "") & "'")
+                For Each str As String In inlot.Split(",")
+                    For Each dr In dt.Select(LOTcol & " =" & str.Replace(vbLf, "") & "")
                         dttemp.Rows.Add(dr.ItemArray)
 
                     Next
@@ -137,14 +167,14 @@ Reflection.BindingFlags.NonPublic).GetValue(ps))
                 ' rpt.RPTview.ReportSource = rpt_M
 
             Else
-                DirectCast(rpt_s.ReportDefinition.ReportObjects("txtSWAN1"), TextObject).Text = "SWAN" & DBCB.Text & "STOCK"
-                DirectCast(rpt_s.ReportDefinition.ReportObjects("txtSWAN2"), TextObject).Text = "SWAN" & DBCB.Text & "STOCK"
+                DirectCast(rpt_s.ReportDefinition.ReportObjects("txtSWAN1"), TextObject).Text = "SWAN " & DBCB.Text & " STOCK"
+                DirectCast(rpt_s.ReportDefinition.ReportObjects("txtSWAN2"), TextObject).Text = "SWAN " & DBCB.Text & " STOCK"
 
-                If txtINV.Enabled Then
-                    DirectCast(rpt_s.ReportDefinition.ReportObjects("txtINV"), TextObject).Text = "INV NO:" & txtINV.Text
-                Else
-                    DirectCast(rpt_s.ReportDefinition.ReportObjects("txtINV"), TextObject).Text = ""
-                End If
+                'If txtINV.Enabled Then
+                '    DirectCast(rpt_s.ReportDefinition.ReportObjects("txtINV"), TextObject).Text = "INV NO:" & txtINV.Text
+                'Else
+                '    DirectCast(rpt_s.ReportDefinition.ReportObjects("txtINV"), TextObject).Text = ""
+                'End If
                 rpt_s.SetDataSource(dt)
 
                 rpt_s.PrintOptions.PaperSize = rawKind
